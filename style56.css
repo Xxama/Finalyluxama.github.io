@@ -1,0 +1,132 @@
+/* ========== GENERAL ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fdfdfd;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* ========== HEADER ========== */
+header {
+  background: #ffffff;
+  padding: 20px 0;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  margin-bottom: 10px;
+}
+
+nav a {
+  margin: 0 15px;
+  color: #333;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #9c27b0;
+}
+
+/* ========== SELECTEUR MARQUE ========== */
+.select-zone {
+  margin: 30px auto;
+  text-align: center;
+}
+
+.select-zone label {
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.select-zone select {
+  padding: 8px 14px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* ========== PRODUITS EN GRILLE ========== */
+.product-page-column {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 20px 40px;
+}
+
+.product-card {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.product-card h2 {
+  font-size: 18px;
+  margin: 10px 0 5px;
+}
+
+.product-card .price {
+  color: #c700ff;
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+/* ========== BOUTON ACHETER ========== */
+.buy-btn {
+  background-color: #9c27b0;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 25px;
+  border: none;
+  text-decoration: none;
+  display: inline-block;
+  font-weight: bold;
+  font-size: 15px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.buy-btn:hover {
+  background-color: #7b1fa2;
+}
+
+/* ========== FOOTER ========== */
+footer {
+  background-color: #222;
+  color: #eee;
+  padding: 25px 15px;
+  text-align: center;
+  font-size: 14px;
+  margin-top: 60px;
+}
+
+footer a {
+  color: #9c27b0;
+  text-decoration: none;
+  margin: 0 8px;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}

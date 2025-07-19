@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="XXL Fourniture - Votre boutique en ligne de produits tech. Smartphones, ordinateurs, laptops et accessoires aux meilleurs prix." />
+  <meta name="keywords" content="smartphone, ordinateur, laptop, accessoires, tech, XXL Fourniture" />
+  <title>XXL Fourniture - Boutique Tech en Ligne</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="image/favicon.ico">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style55.css" />
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  <!-- Preload critical resources -->
+  <link rel="preload" href="image/imaj1.png" as="image">
+  
+  <style>
+    /* Améliorations CSS */
+    .produit-item {
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100%;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-radius: 12px;
+      background: #fff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .produit-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+
+    .produit-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .produit-item:hover .produit-img {
+      transform: scale(1.05);
+    }
+
+    .produit-titre {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-top: 15px;
+      margin-bottom: 12px;
+      height: 50px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      text-align: center;
+      color: #333;
+    }
+
+    .btn-catalogue {
+      background: linear-gradient(135deg, #2e1457 0%, #45297a 100%);
+      color: #ffffff;
+      font-size: 0.9rem;
+      font-weight: 500;
+      padding: 10px 20px;
+      width: 100%;
+      border: none;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+      text-align: center;
+    }
+
+    .btn-catalogue:hover {
+      background: linear-gradient(135deg, #45297a 0%, #5a3a8a 100%);
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(46, 20, 87, 0.3);
+    }
+
+    /* Améliorations pour le carousel */
+    .carousel-control-prev,
+    .carousel-control-next {
+      background: rgba(46, 20, 87, 0.8);
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      margin: auto 20px;
+    }
+
+    .carousel-control-prev:hover,
+    .carousel-control-next:hover {
+      background: rgba(46, 20, 87, 1);
+    }
+
+    /* Améliorations pour les produits */
+    .product-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+    }
+
+    .add-to-cart {
+      background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    .add-to-cart:hover {
+      background: linear-gradient(135deg, #20c997 0%, #17a2b8 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(40, 167, 69, 0.3);
+    }
+
+    /* Améliorations pour la recherche */
+    .search {
+      border-radius: 25px;
+      border: 2px solid #e0e0e0;
+      padding: 10px 20px;
+      transition: all 0.3s ease;
+    }
+
+    .search:focus {
+      border-color: #2e1457;
+      box-shadow: 0 0 0 3px rgba(46, 20, 87, 0.1);
+      outline: none;
+    }
+
+    /* Responsive improvements */
+    @media (max-width: 768px) {
+      .produit-item {
+        margin-bottom: 20px;
+      }
+      
+      .carousel-control-prev,
+      .carousel-control-next {
+        width: 40px;
+        height: 40px;
+        margin: auto 10px;
+      }
+    }
+
+    /* Loading animation */
+    .loading {
+      opacity: 0.7;
+      pointer-events: none;
+    }
+
+    /* Accessibility improvements */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html" aria-label="Page d'accueil">Accueil</a></li>
+        <li><a href="ordi.html" aria-label="Catégorie ordinateurs">🖥️ Ordinateur</a></li>
+        <li><a href="phone.html" aria-label="Catégorie smartphones">📱 Smartphone</a></li>
+        <li><a href="laptop.html" aria-label="Catégorie laptops">💻 Laptop</a></li>
+        <li><a href="indexese.html" aria-label="Catégorie accessoires">Accessoires</a></li>
+        <li><a href="avis.html" aria-label="Avis clients">Avis</a></li>
+        <li><a href="pannier.html" aria-label="Panier d'achat"><i class="fa-solid fa-basket-shopping" aria-hidden="true"></i></a></li>
+        <li><a href="index2.html" aria-label="Espace utilisateur"><i class="fa-solid fa-user" aria-hidden="true"></i></a></li>
+      </ul>
+      <div class="search-container">
+        <input type="text" id="searchBar" placeholder="Rechercher un produit..." class="search" aria-label="Rechercher" />
+        <button type="button" id="searchBtn" aria-label="Lancer la recherche">
+          <i class="fa fa-search" aria-hidden="true"></i>
+        </button>
+      </div>
+      <a href="#contact" class="contact-btn">Contactez-nous</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="presentation">
+      <img src="image/imaj1.png" alt="Logo XXL Fourniture" loading="eager" />
+      <div class="texte">
+        <h1>Bonnes affaires garanties,<br>tous les jours 💻</h1>
+        <p>Découvrez nos offres exclusives sur les dernières nouveautés Tech.</p>
+        <a href="#categories" class="btn-help">Découvrir nos produits</a>
+      </div>
+    </section>
+
+    <section class="categories" id="categories">
+      <h2>Catégories populaires</h2>
+      <div class="container my-5">
+        <div id="carouselUniform" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+          <div class="carousel-inner">
+            <!-- Slide 1 -->
+            <div class="carousel-item active">
+              <div class="row text-center">
+                <div class="col-md-3 produit-item" data-nom="smartphone">
+                  <img src="image/download (8).jpeg" class="produit-img" alt="Smartphone - Découvrez notre gamme de smartphones" loading="lazy">
+                  <h5 class="produit-titre">📱 Smartphone</h5>
+                  <a href="phone.html" class="btn btn-catalogue btn-sm">Consulter catalogue</a>
+                </div>
+                <div class="col-md-3 produit-item" data-nom="laptop">
+                  <img src="image/Apple macbook pro 16-inch (2024), m4 pro chip, 24gb ram, 512 ssd, mx2x3ab_a - space black.jpeg" M3 Pro Unboxing (Space Black).jpeg" class="produit-img" alt="Laptop - Découvrez notre gamme de laptops" loading="lazy">
+                  <h5 class="produit-titre">💻 Laptop</h5>
+                  <a href="laptop.html" class="btn btn-catalogue btn-sm">Consulter catalogue</a>
+                </div>
+                <div class="col-md-3 produit-item" data-nom="ordinateur">
+                  <img src="image/Dell Alienware Area-51 Desktop (2025).jpg" class="produit-img" alt="Ordinateur - Découvrez notre gamme d'ordinateurs" loading="lazy">
+                  <h5 class="produit-titre">🖥️ Ordinateur</h5>
+                  <a href="ordi.html" class="btn btn-catalogue btn-sm">Consulter catalogue</a>
+                </div>
+                <div class="col-md-3 produit-item" data-nom="accessoires">
+                  <img src="image/AutoFull C3 Gaming Chair Computer Chair with Ergonomic Wingless Cushion PU Leather Racing Style PC.jpg" class="produit-img" alt="Accessoires - Découvrez notre gamme d'accessoires" loading="lazy">
+                  <h5 class="produit-titre">🎮 Accessoires</h5>
+                  <a href="indexese.html" class="btn btn-catalogue btn-sm">Consulter catalogue</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="carousel-item">
+              <div class="row text-center">
+                <div class="col-md-3 produit-item" data-nom="smartphone">
+                  <img src="image/Samsung S25 Ultra.jpeg" class="produit-img" alt="Samsung S25 Ultra - Smartphone haut de gamme" loading="lazy">
+                  <h5 class="produit-titre">📱 Smartphone</h5>
+                  <a href="phone.html" class="btn btn-catalogue btn-sm">Consulter catalogue</a>
+                </div>
+                <div class="col-md-3 produit-item" data-nom="laptop">
+                  <img src="image/Samsung Galaxy Book4 Pro 360 Laptop Under $2500!!.jpeg" class="produit-img" alt="Samsung Galaxy Book4 Pro 360 - Laptop convertible" loading="lazy">
+                  <h5 class="produit-titre">💻 Laptop</h5>
+                  <a href="laptop.html" class="btn btn-catalogue btn-sm">Consulter catalogue</a>
+                </div>
+                <div class="col-md-3 produit-item" data-nom="ordinateur">
+                  <img src="image/Mini MegxSnow 3_0 - RTX 4060_4060 Ti x Intel & AMD PC.jpeg" class="produit-img" alt="Mini MegxSnow 3.0 - PC gaming compact" loading="lazy">
+                  <h5 class="produit-titre">🖥️ Ordinateur</h5>
+                  <a href="ordi.html" class="btn btn-catalogue btn-sm">Consulter catalogue</a>
+                </div>
+                <div class="col-md-3 produit-item" data-nom="accessoires">
+                  <img src="image/mousses.jpg" class="produit-img" alt="Souris gaming Black Panther" loading="lazy">
+                  <h5 class="produit-titre">🎮 Accessoires</h5>
+                  <a href="indexese.html" class="btn btn-catalogue btn-sm">Consulter catalogue</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="carousel-item">
+              <div class="row text-center">
+                <div class="col-md-3 produit-item" data-nom="smartphone">
+                  <img src="image/download (3).jpeg" class="produit-img" alt="Smartphone - Nouveautés disponibles" loading="lazy">
+                  <h5 class="produit-titre">📱 Smartphone</h5>
+                  <a href="phone.html" class="btn btn-catalogue btn-sm">Consulter catalogue</a>
+                </div>
+                <div class="col-md-3 produit-item" data-nom="laptop">
+                  <img src="image/Laptop ASUS VivoBook 15X X1503ZA-L1236W 15_6_ OLED i5-12500H 16GB RAM 512GB SSD Windows 11 Home - niskie ceny i opinie w Media Expert.jpeg" class="produit-img" alt="ASUS VivoBook 15X - Laptop performant" loading="lazy">
+                  <h5 class="produit-titre">💻 Laptop</h5>
+                  <a href="laptop.html" class="btn btn-catalogue btn-sm">Consulter catalogue</a>
+                </div>
+                <div class="col-md-3 produit-item" data-nom="ordinateur">
+                  <img src="image/Zalman S5 ATX Mid-Tower Gaming PC Case, 2 x 120mm Fans Included (1x RGB), Thick 4mm Tempered Glass Side Panel, AIO Water Cooler Bracket, Front Panel RGB Strip (White).jpg" class="produit-img" alt="Zalman S5 - Boîtier gaming ATX" loading="lazy">
+                  <h5 class="produit-titre">🖥️ Ordinateur</h5>
+                  <a href="ordi.html" class="btn btn-catalogue btn-sm">Consulter catalogue</a>
+                </div>
+                <div class="col-md-3 produit-item" data-nom="accessoires">
+                  <img src="image/Logitech G733 K_DA Casque Gaming Sans Fil LIGHTSPEED, LIGHTSYNC RVB, Micro avec Blue VO!CE, T___.jpg" class="produit-img" alt="Accessoires gaming - Large sélection" loading="lazy">
+                  <h5 class="produit-titre">🎮 Accessoires</h5>
+                  <a href="indexese.html" class="btn btn-catalogue btn-sm">Consulter catalogue</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="carousel-item">
+              <div class="row text-center">
+                <div class="col-md-3 produit-item" data-nom="smartphone">
+                  <img src="image/Sony Xperia 1 VI.jpeg" class="produit-img" alt="Sony Xperia 1 VI - Smartphone professionnel" loading="lazy">
+                  <h5 class="produit-titre">📱 Smartphone</h5>
+                  <a href="phone.html" class="btn btn-catalogue btn-sm">Consulter catalogue</a>
+                </div>
+                <div class="col-md-3 produit-item" data-nom="laptop">
+                  <img src="image/Lenovo Thinkpad X1 Carbon Gen 6, core i7, 8th generation, 512ssd, 16gb ram, 2K screen display, backlit keyboard KSH_63,0000 CONTACT US_ 0714215210.jpeg" class="produit-img" alt="Lenovo ThinkPad X1 Carbon - Laptop professionnel" loading="lazy">
+                  <h5 class="produit-titre">💻 Laptop</h5>
+                  <a href="laptop.html" class="btn btn-catalogue btn-sm">Consulter catalogue</a>
+                </div>
+                <div class="col-md-3 produit-item" data-nom="ordinateur">
+                  <img src="image/YEYIAN ODACHI Gaming PC Desktop, AMD Ryzen 9 7950X3D, RTX 4090, 32GB DDR5 6000MHz RAM, 2TB M_2 SSD + 2TB HDD, 360mm Liquid Cooler VR Ready Computer, 1000W Platinum PSU, X670 Motherboard, Win 11 Home.jpg" class="produit-img" alt="YEYIAN ODACHI - PC gaming ultra-performant" loading="lazy">
+                  <h5 class="produit-titre">🖥️ Ordinateur</h5>
+                  <a href="ordi.html" class="btn btn-catalogue btn-sm">Consulter catalogue</a>
+                </div>
+                <div class="col-md-3 produit-item" data-nom="accessoires">
+                  <img src="image/Rk68 Keyboard.jpg" class="produit-img" alt="RK68 - Clavier mécanique compact" loading="lazy">
+                  <h5 class="produit-titre">🎮 Accessoires</h5>
+                  <a href="indexese.html" class="btn btn-catalogue btn-sm">Consulter catalogue</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 5 -->
+            <div class="carousel-item">
+              <div class="row text-center">
+                <div class="col-md-3 produit-item" data-nom="smartphone">
+                  <img src="image/VIVO T3x New.jpeg" class="produit-img" alt="VIVO T3x - Nouveau smartphone" loading="lazy">
+                  <h5 class="produit-titre">📱 Smartphone</h5>
+                  <a href="phone.html" class="btn btn-catalogue btn-sm">Consulter catalogue</a>
+                </div>
+                <div class="col-md-3 produit-item" data-nom="laptop">
+                  <img src="image/HP Omen 16.jpeg" class="produit-img" alt="HP Omen 16 - Laptop gaming" loading="lazy">
+                  <h5 class="produit-titre">💻 Laptop</h5>
+                  <a href="laptop.html" class="btn btn-catalogue btn-sm">Consulter catalogue</a>
+                </div>
+                <div class="col-md-3 produit-item" data-nom="ordinateur">
+                  <img src="image/ROG Strix G15CK Gaming Desktop PC, Intel Core i7.jpg" class="produit-img" alt="ROG Strix G15CK - PC gaming ASUS" loading="lazy">
+                  <h5 class="produit-titre">🖥️ Ordinateur</h5>
+                  <a href="ordi.html" class="btn btn-catalogue btn-sm">Consulter catalogue</a>
+                </div>
+                <div class="col-md-3 produit-item" data-nom="accessoires">
+                  <img src="image/Teclado Sem Fio Gamer Steelseries Apex Pro Mini RGB - Preto (Ingles).jpg" class="produit-img" alt="Clavier RGB avec touches blanches" loading="lazy">
+                  <h5 class="produit-titre">🎮 Accessoires</h5>
+                  <a href="indexese.html" class="btn btn-catalogue btn-sm">Consulter catalogue</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contrôles -->
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselUniform" data-bs-slide="prev" aria-label="Précédent">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Précédent</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselUniform" data-bs-slide="next" aria-label="Suivant">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Suivant</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="products" id="products">
+      <h2>Nos nouveautés</h2>
+      <div class="product-grid">
+        <div class="product-card">
+          <a href="product-detail.html?id=1" aria-label="Voir les détails de l'iPhone 16 Pro Max">
+            <img src="image/Apple iPhone 16 Pro Max (512 GB) - Titânio-preto - Distribuidor Autorizado - R$ 12_399.jpeg" alt="iPhone 16 Pro Max - Smartphone Apple haut de gamme" loading="lazy">
+            <h3>iPhone 16 Pro Max</h3>
+            <p class="price">$1,500</p>
+          </a>
+          <button class="add-to-cart" data-id="1" aria-label="Ajouter iPhone 16 Pro Max au panier">
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i> Ajouter
+          </button>
+        </div>
+        <div class="product-card">
+          <a href="product-detail.html?id=2" aria-label="Voir les détails du Samsung S25 Edge">
+            <img src="image/Samsung S25 Ultra.jpeg" alt="Samsung S25 Edge - Smartphone Samsung innovant" loading="lazy">
+            <h3>Samsung S25 Edge</h3>
+            <p class="price">$1,200</p>
+          </a>
+          <button class="add-to-cart" data-id="2" aria-label="Ajouter Samsung S25 Edge au panier">
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i> Ajouter
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Contact</h3>
+        <p><i class="fas fa-envelope" aria-hidden="true"></i> Email: <a href="mailto:contact@xxlfourniture.com">contact@xxlfourniture.com</a></p>
+        <p><i class="fas fa-phone" aria-hidden="true"></i> Téléphone: <a href="tel:+50946264966">+509 4626 4966</a></p>
+        <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Adresse: Port-au-Prince, Haïti</p>
+      </div>
+      <div class="footer-section">
+        <h3>Réseaux sociaux</h3>
+        <div class="social-links">
+          <a href="#" aria-label="Suivez-nous sur Facebook"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Suivez-nous sur Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Suivez-nous sur Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h3>Modes de paiement</h3>
+        <div class="payment-methods">
+          <i class="fab fa-cc-mastercard" aria-label="Mastercard" title="Mastercard"></i>
+          <i class="fab fa-cc-visa" aria-label="Visa" title="Visa"></i>
+          <i class="fas fa-money-bill-wave" aria-label="Espèces" title="Espèces"></i>
+          <i class="fas fa-mobile-alt" aria-label="Mobile Money" title="Mobile Money"></i>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="copyright">&copy; 2025 XXL Fourniture. Tous droits réservés. | <a href="#privacy">Confidentialité</a> | <a href="#terms">Conditions d'utilisation</a></p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Amélioration de la recherche
+    const searchInput = document.getElementById("searchBar");
+    const searchBtn = document.getElementById("searchBtn");
+    const produits = document.querySelectorAll(".produit-item");
+
+    function performSearch() {
+      const valeur = searchInput.value.toLowerCase().trim();
+      
+      if (valeur === "") {
+        // Afficher tous les produits si la recherche est vide
+        produits.forEach(produit => {
+          produit.style.display = "block";
+          produit.classList.remove("loading");
+        });
+        return;
+      }
+
+      produits.forEach(produit => {
+        const nom = produit.dataset.nom ? produit.dataset.nom.toLowerCase() : "";
+        const titre = produit.querySelector(".produit-titre") ? produit.querySelector(".produit-titre").textContent.toLowerCase() : "";
+        
+        if (nom.includes(valeur) || titre.includes(valeur)) {
+          produit.style.display = "block";
+          produit.classList.remove("loading");
+        } else {
+          produit.style.display = "none";
+        }
+      });
+    }
+
+    // Événements de recherche
+    searchInput.addEventListener("keyup", function(event) {
+      if (event.key === "Enter") {
+        performSearch();
+      } else {
+        performSearch();
+      }
+    });
+
+    searchBtn.addEventListener("click", performSearch);
+
+    // Gestion du panier
+    const addToCartButtons = document.querySelectorAll(".add-to-cart");
+    
+    addToCartButtons.forEach(button => {
+      button.addEventListener("click", function(e) {
+        e.preventDefault();
+        const productId = this.dataset.id;
+        const productName = this.closest('.product-card').querySelector('h3').textContent;
+        
+        // Animation de feedback
+        this.innerHTML = '<i class="fa fa-check" aria-hidden="true"></i> Ajouté !';
+        this.style.background = 'linear-gradient(135deg, #28a745 0%, #20c997 100%)';
+        
+        // Sauvegarder dans le localStorage
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        cart.push({
+          id: productId,
+          name: productName,
+          addedAt: new Date().toISOString()
+        });
+        localStorage.setItem('cart', JSON.stringify(cart));
+        
+        // Notification
+        showNotification(`${productName} ajouté au panier !`);
+        
+        // Reset du bouton après 2 secondes
+        setTimeout(() => {
+          this.innerHTML = '<i class="fa fa-shopping-cart" aria-hidden="true"></i> Ajouter';
+          this.style.background = 'linear-gradient(135deg, #28a745 0%, #20c997 100%)';
+        }, 2000);
+      });
+    });
+
+    // Fonction de notification
+    function showNotification(message) {
+      const notification = document.createElement('div');
+      notification.className = 'notification';
+      notification.textContent = message;
+      notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+        color: white;
+        padding: 15px 25px;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        z-index: 1000;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        font-weight: 600;
+      `;
+      
+      document.body.appendChild(notification);
+      
+      // Animation d'entrée
+      setTimeout(() => {
+        notification.style.transform = 'translateX(0)';
+      }, 100);
+      
+      // Suppression automatique
+      setTimeout(() => {
+        notification.style.transform = 'translateX(100%)';
+        setTimeout(() => {
+          document.body.removeChild(notification);
+        }, 300);
+      }, 3000);
+    }
+
+    // Amélioration de l'accessibilité
+    document.addEventListener('keydown', function(e) {
+      // Navigation au clavier pour le carousel
+      if (e.key === 'ArrowLeft') {
+        const prevBtn = document.querySelector('.carousel-control-prev');
+        if (prevBtn) prevBtn.click();
+      }
+      if (e.key === 'ArrowRight') {
+        const nextBtn = document.querySelector('.carousel-control-next');
+        if (nextBtn) nextBtn.click();
+      }
+    });
+
+    // Lazy loading pour les images
+    if ('IntersectionObserver' in window) {
+      const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const img = entry.target;
+            img.src = img.dataset.src || img.src;
+            img.classList.remove('lazy');
+            imageObserver.unobserve(img);
+          }
+        });
+      });
+
+      document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+        imageObserver.observe(img);
+      });
+    }
+
+    // Amélioration des performances
+    window.addEventListener('load', function() {
+      // Préchargement des images importantes
+      const criticalImages = [
+        'image/imaj1.png',
+        'image/download (8).jpeg'
+      ];
+      
+      criticalImages.forEach(src => {
+        const img = new Image();
+        img.src = src;
+      });
+    });
+  </script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

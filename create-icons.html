@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Générateur d'icônes - XXL Fourniture</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      margin: 0;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    
+    h1 {
+      color: #2e1457;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    
+    .icon-generator {
+      text-align: center;
+      margin: 20px 0;
+    }
+    
+    canvas {
+      border: 2px solid #ddd;
+      border-radius: 10px;
+      margin: 10px;
+    }
+    
+    .download-btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background: linear-gradient(135deg, #2e1457 0%, #45297a 100%);
+      color: white;
+      text-decoration: none;
+      border-radius: 25px;
+      margin: 10px;
+      transition: all 0.3s ease;
+    }
+    
+    .download-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(46, 20, 87, 0.3);
+    }
+    
+    .instructions {
+      background: #f8f9fa;
+      padding: 20px;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+    
+    .instructions h3 {
+      color: #2e1457;
+      margin-bottom: 15px;
+    }
+    
+    .instructions ol {
+      text-align: left;
+      padding-left: 20px;
+    }
+    
+    .instructions li {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🎨 Générateur d'icônes XXL Fourniture</h1>
+    
+    <div class="instructions">
+      <h3>📋 Instructions :</h3>
+      <ol>
+        <li>Cliquez sur "Générer les icônes" pour créer toutes les icônes nécessaires</li>
+        <li>Téléchargez chaque icône en cliquant sur les boutons de téléchargement</li>
+        <li>Placez les icônes dans le dossier <code>image/</code> de votre site</li>
+        <li>Les icônes seront automatiquement utilisées par le site</li>
+      </ol>
+    </div>
+    
+    <div class="icon-generator">
+      <button onclick="generateAllIcons()" class="download-btn">🎨 Générer toutes les icônes</button>
+    </div>
+    
+    <div id="icons-container">
+      <!-- Les icônes seront générées ici -->
+    </div>
+  </div>
+
+  <script>
+    function generateIcon(size, text, filename) {
+      const canvas = document.createElement('canvas');
+      canvas.width = size;
+      canvas.height = size;
+      const ctx = canvas.getContext('2d');
+      
+      // Fond dégradé
+      const gradient = ctx.createLinearGradient(0, 0, size, size);
+      gradient.addColorStop(0, '#2e1457');
+      gradient.addColorStop(1, '#45297a');
+      ctx.fillStyle = gradient;
+      ctx.fillRect(0, 0, size, size);
+      
+      // Texte
+      ctx.fillStyle = 'white';
+      ctx.font = `bold ${size * 0.3}px Arial`;
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText(text, size / 2, size / 2);
+      
+      // Bordure
+      ctx.strokeStyle = 'rgba(255, 255, 255, 0.3)';
+      ctx.lineWidth = size * 0.02;
+      ctx.strokeRect(size * 0.05, size * 0.05, size * 0.9, size * 0.9);
+      
+      return canvas;
+    }
+    
+    function downloadCanvas(canvas, filename) {
+      const link = document.createElement('a');
+      link.download = filename;
+      link.href = canvas.toDataURL();
+      link.click();
+    }
+    
+    function generateAllIcons() {
+      const container = document.getElementById('icons-container');
+      container.innerHTML = '';
+      
+      const icons = [
+        { size: 16, text: 'XXL', filename: 'favicon-16x16.png' },
+        { size: 32, text: 'XXL', filename: 'favicon-32x32.png' },
+        { size: 192, text: 'XXL', filename: 'icon-192.png' },
+        { size: 512, text: 'XXL', filename: 'icon-512.png' },
+        { size: 96, text: '📱', filename: 'icon-phone.png' },
+        { size: 96, text: '🖥️', filename: 'icon-pc.png' },
+        { size: 96, text: '🛒', filename: 'icon-cart.png' }
+      ];
+      
+      icons.forEach(icon => {
+        const canvas = generateIcon(icon.size, icon.text, icon.filename);
+        
+        const iconDiv = document.createElement('div');
+        iconDiv.style.display = 'inline-block';
+        iconDiv.style.margin = '10px';
+        iconDiv.style.textAlign = 'center';
+        
+        iconDiv.innerHTML = `
+          <div style="margin-bottom: 10px;">
+            <strong>${icon.filename}</strong><br>
+            <small>${icon.size}x${icon.size}px</small>
+          </div>
+          <canvas id="canvas-${icon.filename}" width="${icon.size}" height="${icon.size}"></canvas>
+          <br>
+          <button onclick="downloadIcon('${icon.filename}')" class="download-btn">⬇️ Télécharger</button>
+        `;
+        
+        container.appendChild(iconDiv);
+        
+        // Copier le canvas
+        const newCanvas = iconDiv.querySelector(`#canvas-${icon.filename}`);
+        const newCtx = newCanvas.getContext('2d');
+        newCtx.drawImage(canvas, 0, 0);
+        
+        // Stocker le canvas pour le téléchargement
+        window[`canvas-${icon.filename}`] = canvas;
+      });
+    }
+    
+    function downloadIcon(filename) {
+      const canvas = window[`canvas-${filename}`];
+      if (canvas) {
+        downloadCanvas(canvas, filename);
+      }
+    }
+    
+    // Générer automatiquement au chargement
+    window.addEventListener('load', () => {
+      setTimeout(generateAllIcons, 1000);
+    });
+  </script>
+</body>
+</html> 

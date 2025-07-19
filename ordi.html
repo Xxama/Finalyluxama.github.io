@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Découvrez notre sélection d'ordinateurs de bureau gaming et professionnels. RTX 4080, Alienware, et plus encore.">
+  <meta name="keywords" content="ordinateur bureau, gaming pc, RTX 4080, Alienware, ordinateur gaming">
+  <title>Ordinateurs de Bureau - XXL Fourniture</title>
+  <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Search Bar Styles */
+    .search-container {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .search-bar {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 15px;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .search-input {
+      flex: 1;
+      min-width: 250px;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 25px;
+      font-size: 16px;
+      background: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .search-input:focus {
+      outline: none;
+      background: white;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+      transform: translateY(-2px);
+    }
+
+    .search-btn {
+      padding: 12px 25px;
+      background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+      color: white;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .search-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .filter-buttons {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .filter-btn {
+      padding: 8px 16px;
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 500;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: rgba(255, 255, 255, 0.3);
+      border-color: rgba(255, 255, 255, 0.5);
+      transform: translateY(-1px);
+    }
+
+    .product-section {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 40px;
+      flex-wrap: wrap;
+    }
+
+    .product-column {
+      flex: 1;
+      min-width: 250px;
+      background-color: white;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .product-column h3 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .product-card {
+      text-align: center;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      padding: 10px;
+      background: #fff;
+      transition: transform 0.2s;
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .product-card.hidden {
+      display: none;
+    }
+
+    .product-card.fade-out {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+
+    .product-card:hover {
+      transform: scale(1.03);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .price {
+      font-weight: bold;
+      color: green;
+    }
+
+    .buy-btn {
+      display: inline-block;
+      margin-top: 10px;
+      background-color: purple;
+      color: white;
+      padding: 6px 12px;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .buy-btn:hover {
+      background-color: #6a0dad;
+      transform: translateY(-2px);
+    }
+
+    .buy-btn:active {
+      transform: translateY(0);
+    }
+
+     header {
+      background: #2e1457;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #e74c3c;
+    }
+
+    /* Notification styles */
+    .notification {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: linear-gradient(45deg, #27ae60, #2ecc71);
+      color: white;
+      padding: 15px 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      transform: translateX(400px);
+      transition: transform 0.3s ease;
+      z-index: 1000;
+    }
+
+    .notification.show {
+      transform: translateX(0);
+    }
+
+    .no-results {
+      text-align: center;
+      padding: 40px;
+      color: #666;
+      font-size: 18px;
+      background: white;
+      border-radius: 10px;
+      margin: 20px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+footer {
+    background: #2e1457;
+    color: white;
+    padding: 2rem;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    margin: 1rem;
+    min-width: 200px;
+}
+
+.footer-section h3 {
+    margin-bottom: 0.5rem;
+    color: #e74c3c;
+}
+
+.footer-section a {
+    color: white;
+    margin: 0 0.5rem;
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+.footer-section a:hover {
+    color: #e74c3c;
+}
+
+.payment-methods i {
+    margin: 0 0.5rem;
+    font-size: 1.5rem;
+}
+
+.copyright {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #bdc3c7;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .search-bar {
+    flex-direction: column;
+  }
+  
+  .search-input {
+    min-width: 100%;
+  }
+  
+  .filter-buttons {
+    justify-content: center;
+  }
+  
+  .product-section {
+    padding: 20px;
+  }
+}
+  </style>
+</head>
+<body>
+      <header>
+    <h1>🖥️Ordinateur de bureau_section.</h1>
+    <nav>
+      <a href="index55.html">🏠 Accueil</a>
+      <a href="phone.html">📱 Smartphones</a>
+      <a href="indexese.html">accessoires</a>
+      <a href="laptop.html">💻Laptop</a>
+      <a href="pannier.html">🛒 panier(<span id="cart-count">0</span>)</a>
+    </nav>
+  </header>
+
+  <!-- Search Bar Section -->
+  <div class="search-container">
+    <div class="search-bar">
+      <input type="text" id="searchInput" class="search-input" placeholder="Rechercher un ordinateur..." aria-label="Rechercher un ordinateur">
+      <button type="button" class="search-btn" onclick="performSearch()" aria-label="Rechercher">
+        <i class="fas fa-search"></i> Rechercher
+      </button>
+    </div>
+    <div class="filter-buttons">
+      <button class="filter-btn active" data-category="all" onclick="filterByCategory('all')">Tous</button>
+      <button class="filter-btn" data-category="gaming" onclick="filterByCategory('gaming')">Gaming</button>
+      <button class="filter-btn" data-category="workstation" onclick="filterByCategory('workstation')">Workstation</button>
+      <button class="filter-btn" data-category="basic" onclick="filterByCategory('basic')">Basique</button>
+    </div>
+  </div>
+
+<main>
+  <div class="product-section">
+    
+    <!-- -->
+    <div class="product-column">
+      <h3>🖥️Ordinateur</h3>
+      <div class="product-card" data-category="gaming" data-name="Nvidia geforce RTX 4080" data-price="4090">
+        <img src="image/Nvidia geforce RTX 4080 White.jpeg" alt="Nvidia geforce RTX 4080 - Ordinateur gaming haute performance">
+        <h4> Nvidia geforce RTX 4080</h4>
+        <p class="price">4090 $</p>
+        <button class="buy-btn" onclick="addToCart('Nvidia geforce RTX 4080', 4090)" aria-label="Ajouter Nvidia geforce RTX 4080 au panier">Acheter</button>
+      </div>
+      <div class="product-card" data-category="gaming" data-name="Dell Alienware Area-51" data-price="3090">
+        <img src="image/Dell Alienware Area-51 Desktop (2025).jpg" alt="Dell Alienware Area-51 - Ordinateur gaming premium">
+        <h4> Dell Alienware Area-51 </h4>
+        <p class="price">3090 $</p>
+        <button class="buy-btn" onclick="addToCart('Dell Alienware Area-51', 3090)" aria-label="Ajouter Dell Alienware Area-51 au panier">Acheter</button>
+      </div>
+      <div class="product-card" data-category="gaming" data-name="RTX 4060_4060" data-price="4000">
+        <img src="image/SUPER DEAL X - RTX 4060_4060 Ti - Ryzen & Intel 13_14th Gen PC.jpeg" alt="RTX 4060/4060 Ti - Ordinateur gaming">
+        <h4>  RTX 4060_4060</h4>
+        <p class="price">4000 $</p>
+        <button class="buy-btn" onclick="addToCart('RTX 4060_4060', 4000)" aria-label="Ajouter RTX 4060_4060 au panier">Acheter</button>
+      </div>
+      <div class="product-card" data-category="gaming" data-name="Zalman S5 ATX Mid-Tower Gaming PC" data-price="3490">
+        <img src="image/Zalman S5 ATX Mid-Tower Gaming PC Case, 2 x 120mm Fans Included (1x RGB), Thick 4mm Tempered Glass Side Panel, AIO Water Cooler Bracket, Front Panel RGB Strip (White).jpg" alt="Zalman S5 ATX Mid-Tower Gaming PC - Boîtier gaming">
+        <h4>Zalman S5 ATX Mid-Tower Gaming PC</h4>
+        <p class="price">3490 $</p>
+        <button class="buy-btn" onclick="addToCart('Zalman S5 ATX Mid-Tower Gaming PC', 3490)" aria-label="Ajouter Zalman S5 ATX Mid-Tower Gaming PC au panier">Acheter</button>
+      </div>
+      <div class="product-card" data-category="gaming" data-name="ROG Strix G15CK Gaming Desktop PC" data-price="4000">
+        <img src="image/ROG Strix G15CK Gaming Desktop PC, Intel Core i7.jpg" alt="ROG Strix G15CK Gaming Desktop PC - Ordinateur gaming ASUS">
+        <h4> ROG Strix G15CK Gaming Desktop PC</h4>
+        <p class="price">4000 $</p>
+        <button class="buy-btn" onclick="addToCart('ROG Strix G15CK Gaming Desktop PC', 4000)" aria-label="Ajouter ROG Strix G15CK Gaming Desktop PC au panier">Acheter</button>
+      </div>
+    </div>
+
+    <!-- top ordi -->
+    <div class="product-column">
+      <h3>Top ordi</h3>
+      <div class="product-card" data-category="gaming" data-name="PC Gaming Rig with RTX 4090 Aero" data-price="2900">
+        <img src="image/PC Gaming Rig with RTX 4090 Aero.jpeg" alt="PC Gaming Rig with RTX 4090 Aero - Ordinateur gaming ultra-performant">
+        <h4>PC Gaming Rig with RTX 4090 Aero</h4>
+        <p class="price">2900 $</p>
+        <button class="buy-btn" onclick="addToCart('PC Gaming Rig with RTX 4090 Aero', 2900)" aria-label="Ajouter PC Gaming Rig with RTX 4090 Aero au panier">Acheter</button>
+      </div>
+       <div class="product-card" data-category="gaming" data-name="PC Gamer Ryzen 9 RX7900XTX" data-price="3000">
+        <img src="image/PC Gamer Ryzen 9 RX7900XTX.jpeg" alt="PC Gamer Ryzen 9 RX7900XTX - Ordinateur gaming AMD">
+        <h4>PC Gamer Ryzen 9 RX7900XTX</h4>
+        <p class="price">3000 $</p>
+        <button class="buy-btn" onclick="addToCart('PC Gamer Ryzen 9 RX7900XTX', 3000)" aria-label="Ajouter PC Gamer Ryzen 9 RX7900XTX au panier">Acheter</button>
+      </div>
+      <div class="product-card" data-category="workstation" data-name="Gamer Platin AMD Ryzen" data-price="3200">
+        <img src="image/PC Gamer Platin AMD Ryzen.jpg" alt="Gamer Platin AMD Ryzen - Workstation gaming">
+        <h4>Gamer Platin AMD Ryzen</h4>
+        <p class="price">3200 $</p>
+        <button class="buy-btn" onclick="addToCart('Gamer Platin AMD Ryzen', 3200)" aria-label="Ajouter Gamer Platin AMD Ryzen au panier">Acheter</button>
+      </div>
+      <div class="product-card" data-category="workstation" data-name="ordi ultra" data-price="3500">
+        <img src="image/PC Gamer Intel Core i7 16GB RAM Nvidia Geforce GTX 1650 4GB GDDR6 HD 3TB EasyPC ATK.jpg" alt="Ordinateur ultra - Workstation haute performance">
+        <h4>ordi ultra</h4>
+        <p class="price">3500 $</p>
+        <button class="buy-btn" onclick="addToCart('ordi ultra', 3500)" aria-label="Ajouter ordi ultra au panier">Acheter</button>
+      </div>
+      <div class="product-card" data-category="gaming" data-name="Pc gamer blanc Rtx 4090" data-price="3400">
+        <img src="image/Pc gamer blanc Rtx 4090 + corsair.jpeg" alt="Pc gamer blanc Rtx 4090 - Ordinateur gaming blanc">
+        <h4>Pc gamer blanc Rtx 4090</h4>
+        <p class="price">3400 $</p>
+        <button class="buy-btn" onclick="addToCart('Pc gamer blanc Rtx 4090', 3400)" aria-label="Ajouter Pc gamer blanc Rtx 4090 au panier">Acheter</button>
+      </div>
+     
+    </div>
+
+    <!-- ordinateur gamming basic -->
+    <div class="product-column">
+      <h3>ordinateur gamming basic</h3>
+      <div class="product-card" data-category="basic" data-name="CORSAIR Spec-Omega RGB Mid-Tower" data-price="3000">
+        <img src="image/CORSAIR Spec-Omega RGB Mid-Tower Tempered Glass Gaming Case Review.jpg" alt="CORSAIR Spec-Omega RGB Mid-Tower - Boîtier gaming basique">
+        <h4>CORSAIR Spec-Omega RGB Mid-Tower</h4>
+        <p class="price">3000 $</p>
+        <button class="buy-btn" onclick="addToCart('CORSAIR Spec-Omega RGB Mid-Tower', 3000)" aria-label="Ajouter CORSAIR Spec-Omega RGB Mid-Tower au panier">Acheter</button>
+      </div>
+      <div class="product-card" data-category="basic" data-name="Corsair Carbide SPEC-Omega" data-price="3200">
+        <img src="image/Corsair Carbide SPEC-Omega RGB Mid-Tower ATX PC Gaming Case, Tempered Glass - White.jpg" alt="Corsair Carbide SPEC-Omega - Boîtier gaming blanc">
+        <h4>Corsair Carbide SPEC-Omega</h4>
+        <p class="price">3200 $</p>
+        <button class="buy-btn" onclick="addToCart('Corsair Carbide SPEC-Omega', 3200)" aria-label="Ajouter Corsair Carbide SPEC-Omega au panier">Acheter</button>
+     </div>
+     <div class="product-card" data-category="basic" data-name="jonsbo PC" data-price="4000">
+        <img src="image/jonsbo PC mech case.jpeg" alt="jonsbo PC - Boîtier gaming mécanique">
+        <h4>jonsbo PC</h4>
+        <p class="price">4000 $</p>
+        <button class="buy-btn" onclick="addToCart('jonsbo PC', 4000)" aria-label="Ajouter jonsbo PC au panier">Acheter</button>
+     </div>
+     <div class="product-card" data-category="basic" data-name="PC Gamer Ryzen 9 RX7900XTX" data-price="4000">
+        <img src="image/PC Gamer Ryzen 9 RX7900XTX.jpeg" alt="PC Gamer Ryzen 9 RX7900XTX - Ordinateur gaming basique">
+        <h4>PC Gamer Ryzen 9 RX7900XTX</h4>
+        <p class="price">4000 $</p>
+        <button class="buy-btn" onclick="addToCart('PC Gamer Ryzen 9 RX7900XTX', 4000)" aria-label="Ajouter PC Gamer Ryzen 9 RX7900XTX au panier">Acheter</button>
+     </div>
+     <div class="product-card" data-category="basic" data-name="AWD-IT Gaming" data-price="3500">
+        <img src="image/Ordinateur de Bureau AWD-IT Gaming - Processeur Intel 11400F • NVIDIA RTX 3050 8 Go • RAM 16 ___.jpg" alt="AWD-IT Gaming - Ordinateur gaming basique">
+        <h4>AWD-IT Gaming </h4>
+        <p class="price">3500 $</p>
+        <button class="buy-btn" onclick="addToCart('AWD-IT Gaming', 3500)" aria-label="Ajouter AWD-IT Gaming au panier">Acheter</button>
+     </div>
+      <div class="product-card" data-category="basic" data-name="Arctic Aura_ A Frozen" data-price="4300">
+        <img src="image/Arctic Aura_ A Frozen Gaming Beast.jpeg" alt="Arctic Aura_ A Frozen - Ordinateur gaming arctique">
+        <h4>Arctic Aura_ A Frozen</h4>
+        <p class="price">4300 $</p>
+        <button class="buy-btn" onclick="addToCart('Arctic Aura_ A Frozen', 4300)" aria-label="Ajouter Arctic Aura_ A Frozen au panier">Acheter</button>
+     </div>
+    </div>
+  </div>
+</main>
+
+<!-- Notification -->
+<div id="notification" class="notification" role="alert" aria-live="polite"></div>
+
+<footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>contacte</h3>
+                <p>Email: contact@xxlfourniture.com</p>
+                <p>Phone: +509 4626 4966</p>
+            </div>
+            <div class="footer-section">
+                <h3>Reseaux sociaux</h3>
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+            <div class="footer-section">
+                <h3>mode de paiement</h3>
+                <div class="payment-methods">
+                    <i class="fab fa-cc-mastercard" title="Mastercard"></i>
+                    <i class="fab fa-cc-visa" title="Visa"></i>
+                    <i class="fas fa-money-bill-wave" title="Cash"></i>
+                    <i class="fas fa-mobile-alt" title="Mobile Money"></i>
+                </div>
+            </div>
+        </div>
+        <p class="copyright">&copy; 2025 XXL Fourniture. Confidentialite.</p>
+    </footer>
+
+ <script>
+  // Search and filter functionality
+  let currentFilter = 'all';
+  let searchTerm = '';
+
+  function performSearch() {
+    searchTerm = document.getElementById('searchInput').value.toLowerCase().trim();
+    filterProducts();
+  }
+
+  function filterByCategory(category) {
+    currentFilter = category;
+    
+    // Update active button
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.classList.remove('active');
+    });
+    event.target.classList.add('active');
+    
+    filterProducts();
+  }
+
+  function filterProducts() {
+    const products = document.querySelectorAll('.product-card');
+    let visibleCount = 0;
+
+    products.forEach(product => {
+      const name = product.getAttribute('data-name').toLowerCase();
+      const category = product.getAttribute('data-category');
+      
+      const matchesSearch = searchTerm === '' || name.includes(searchTerm);
+      const matchesCategory = currentFilter === 'all' || category === currentFilter;
+      
+      if (matchesSearch && matchesCategory) {
+        product.classList.remove('hidden', 'fade-out');
+        visibleCount++;
+      } else {
+        product.classList.add('fade-out');
+        setTimeout(() => {
+          product.classList.add('hidden');
+        }, 300);
+      }
+    });
+
+    // Show no results message if needed
+    showNoResultsMessage(visibleCount === 0);
+  }
+
+  function showNoResultsMessage(show) {
+    let noResults = document.querySelector('.no-results');
+    
+    if (show && !noResults) {
+      noResults = document.createElement('div');
+      noResults.className = 'no-results';
+      noResults.innerHTML = `
+        <i class="fas fa-search" style="font-size: 48px; color: #ccc; margin-bottom: 20px;"></i>
+        <p>Aucun ordinateur trouvé pour "${searchTerm}" dans la catégorie "${currentFilter === 'all' ? 'Toutes' : currentFilter}"</p>
+        <p>Essayez de modifier vos critères de recherche.</p>
+      `;
+      document.querySelector('.product-section').appendChild(noResults);
+    } else if (!show && noResults) {
+      noResults.remove();
+    }
+  }
+
+  // Search on input change
+  document.getElementById('searchInput').addEventListener('input', performSearch);
+  document.getElementById('searchInput').addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+      performSearch();
+    }
+  });
+
+  // Enhanced cart functionality
+  function addToCart(name, price) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart.push({ name, price });
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartCount();
+    
+    // Show notification
+    showNotification(`${name} a été ajouté au panier !`);
+  }
+
+  function showNotification(message) {
+    const notification = document.getElementById('notification');
+    notification.textContent = message;
+    notification.classList.add('show');
+    
+    setTimeout(() => {
+      notification.classList.remove('show');
+    }, 3000);
+  }
+
+  function updateCartCount() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    document.getElementById('cart-count').textContent = cart.length;
+  }
+
+  // Initialize page
+  window.onload = function() {
+    updateCartCount();
+    
+    // Add animation observer for product cards
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.product-card').forEach(card => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(20px)';
+      card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(card);
+    });
+  };
+</script>
+
+</body>
+</html>

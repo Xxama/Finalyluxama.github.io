@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Découvrez les avis de nos clients satisfaits. Témoignages authentiques sur nos produits et services XXL Fourniture.">
+  <meta name="keywords" content="avis clients, témoignages, satisfaction client, XXL Fourniture, reviews">
+  <title>Avis Clients - XXL Fourniture</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    header {
+      background: linear-gradient(135deg, #2e1457 0%, #45297a 100%);
+      color: white;
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h1 {
+      margin: 0 0 1rem 0;
+      font-size: 2.5rem;
+      font-weight: 700;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 25px;
+      transition: all 0.3s ease;
+      font-weight: 500;
+      position: relative;
+      overflow: hidden;
+    }
+
+    nav a::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.2);
+      transition: left 0.3s ease;
+    }
+
+    nav a:hover::before {
+      left: 0;
+    }
+
+    nav a:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .search-container {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .search {
+      padding: 10px 20px;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 25px;
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      font-size: 1rem;
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+      min-width: 250px;
+    }
+
+    .search::placeholder {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .search:focus {
+      outline: none;
+      border-color: rgba(255, 255, 255, 0.8);
+      background: rgba(255, 255, 255, 0.2);
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    }
+
+    .contact-btn {
+      background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 25px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .contact-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(231, 76, 60, 0.3);
+    }
+
+    .avis-section {
+      padding: 3rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .avis-section h1 {
+      text-align: center;
+      margin-bottom: 3rem;
+      font-size: 3rem;
+      color: #2e1457;
+      font-weight: 700;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+      position: relative;
+    }
+
+    .avis-section h1::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 4px;
+      background: linear-gradient(135deg, #2e1457 0%, #45297a 100%);
+      border-radius: 2px;
+    }
+
+    .stats-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .stat-card {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 2rem;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(10px);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 700;
+      color: #2e1457;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+      color: #666;
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+
+    .avis {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+    }
+
+    .avis-item {
+      background: rgba(255, 255, 255, 0.95);
+      border-left: 5px solid #27ae60;
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .avis-item::before {
+      content: '"';
+      position: absolute;
+      top: -10px;
+      left: 20px;
+      font-size: 4rem;
+      color: rgba(39, 174, 96, 0.2);
+      font-family: serif;
+    }
+
+    .avis-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      border-left-color: #2ecc71;
+    }
+
+    .avis-item h3 {
+      margin-bottom: 1rem;
+      color: #2e1457;
+      font-size: 1.3rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .avis-item h3::before {
+      content: '';
+      width: 30px;
+      height: 30px;
+      background: linear-gradient(135deg, #2e1457 0%, #45297a 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 0.8rem;
+      font-weight: bold;
+    }
+
+    .avis-item p {
+      margin-bottom: 1.5rem;
+      color: #555;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      font-style: italic;
+    }
+
+    .avis-item .rating {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .avis-item .stars {
+      color: #f0c040;
+      font-size: 1.2rem;
+    }
+
+    .avis-item .date {
+      color: #999;
+      font-size: 0.9rem;
+      font-style: italic;
+    }
+
+    .avis-item .product-info {
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      padding: 1rem;
+      border-radius: 10px;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    .add-review-section {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 3rem;
+      border-radius: 20px;
+      margin-top: 3rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(10px);
+    }
+
+    .add-review-section h2 {
+      text-align: center;
+      color: #2e1457;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+    }
+
+    .review-form {
+      display: grid;
+      gap: 1.5rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .form-group label {
+      font-weight: 600;
+      color: #333;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      padding: 12px;
+      border: 2px solid #e9ecef;
+      border-radius: 10px;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: #2e1457;
+      box-shadow: 0 0 0 3px rgba(46, 20, 87, 0.1);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .rating-input {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    .rating-input input[type="radio"] {
+      display: none;
+    }
+
+    .rating-input label {
+      font-size: 1.5rem;
+      color: #ddd;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .rating-input input[type="radio"]:checked ~ label,
+    .rating-input label:hover,
+    .rating-input label:hover ~ label {
+      color: #f0c040;
+    }
+
+    .submit-btn {
+      background: linear-gradient(135deg, #2e1457 0%, #45297a 100%);
+      color: white;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 25px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(46, 20, 87, 0.3);
+    }
+
+    /* Footer amélioré */
+    footer {
+      background: linear-gradient(135deg, #2e1457 0%, #45297a 100%);
+      color: white;
+      padding: 3rem 2rem 1rem;
+      margin-top: 3rem;
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .footer-section {
+      text-align: center;
+    }
+
+    .footer-section h3 {
+      margin-bottom: 1rem;
+      color: #fff;
+      font-size: 1.3rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .footer-section a {
+      color: white;
+      margin: 0 0.5rem;
+      font-size: 1.5rem;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    .footer-section a:hover {
+      color: #e74c3c;
+      transform: translateY(-3px);
+    }
+
+    .payment-methods {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .payment-methods i {
+      margin: 0 0.5rem;
+      font-size: 1.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .payment-methods i:hover {
+      transform: scale(1.2);
+      color: #e74c3c;
+    }
+
+    .copyright {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: #bdc3c7;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 1rem;
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateX(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    /* Notification styles */
+    .notification {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+      color: white;
+      padding: 15px 25px;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      z-index: 1000;
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+      font-weight: 600;
+      max-width: 300px;
+    }
+
+    .notification.show {
+      transform: translateX(0);
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+      .avis-section {
+        padding: 2rem 1rem;
+      }
+
+      .avis-section h1 {
+        font-size: 2rem;
+      }
+
+      .stats-container {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1rem;
+      }
+
+      .stat-number {
+        font-size: 2rem;
+      }
+
+      .avis {
+        grid-template-columns: 1fr;
+      }
+
+      .add-review-section {
+        padding: 2rem 1rem;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .search-container {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .search {
+        min-width: 100%;
+      }
+    }
+
+    /* Loading states */
+    .loading {
+      opacity: 0.7;
+      pointer-events: none;
+    }
+
+    /* Accessibility improvements */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>⭐ Avis Clients</h1>
+    <nav>
+      <ul>
+        <li><a href="index55.html" aria-label="Retour à l'accueil">🏠 Accueil</a></li>
+        <li><a href="ordi.html" aria-label="Voir les ordinateurs">🖥️ Ordinateurs</a></li>
+        <li><a href="phone.html" aria-label="Voir les smartphones">📱 Smartphones</a></li>
+        <li><a href="laptop.html" aria-label="Voir les laptops">💻 Laptops</a></li>
+        <li><a href="indexese.html" aria-label="Voir les accessoires">🎮 Accessoires</a></li>
+        <li><a href="pannier.html" aria-label="Voir le panier"><i class="fas fa-shopping-cart" aria-hidden="true"></i></a></li>
+        <li><a href="index2.html" aria-label="Espace utilisateur"><i class="fas fa-user" aria-hidden="true"></i></a></li>
+      </ul>
+      <div class="search-container">
+        <input type="text" placeholder="Rechercher un avis..." class="search" aria-label="Rechercher un avis">
+        <a href="#contact" class="contact-btn">Contactez-nous</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="avis-section">
+      <h1>Témoignages de nos clients</h1>
+
+      <!-- Statistiques -->
+      <div class="stats-container">
+        <div class="stat-card">
+          <div class="stat-number">98%</div>
+          <div class="stat-label">Clients satisfaits</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">4.8</div>
+          <div class="stat-label">Note moyenne</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">1500+</div>
+          <div class="stat-label">Avis vérifiés</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">24h</div>
+          <div class="stat-label">Livraison rapide</div>
+        </div>
+      </div>
+
+      <!-- Avis clients -->
+      <div class="avis">
+        <div class="avis-item">
+          <h3>Jean Robert</h3>
+          <div class="rating">
+            <span class="stars">★★★★★</span>
+            <span class="date">Il y a 2 jours</span>
+          </div>
+          <p>"Très satisfait du service client. Livraison rapide et produit conforme à la description. Je recommande vivement XXL Fourniture pour vos achats tech !"</p>
+          <div class="product-info">
+            <strong>Produit acheté :</strong> iPhone 15 Pro
+          </div>
+        </div>
+
+        <div class="avis-item">
+          <h3>Marie Carmel</h3>
+          <div class="rating">
+            <span class="stars">★★★★☆</span>
+            <span class="date">Il y a 1 semaine</span>
+          </div>
+          <p>"Le smartphone que j'ai commandé fonctionne parfaitement. Le processus de commande était simple et le support client très réactif. Je recommande !"</p>
+          <div class="product-info">
+            <strong>Produit acheté :</strong> Samsung Galaxy S25
+          </div>
+        </div>
+
+        <div class="avis-item">
+          <h3>David Joseph</h3>
+          <div class="rating">
+            <span class="stars">★★★★★</span>
+            <span class="date">Il y a 2 semaines</span>
+          </div>
+          <p>"Excellent rapport qualité-prix. Les produits sont authentiques et les prix très compétitifs. Je rachèterai chez XXL Fourniture sans hésiter."</p>
+          <div class="product-info">
+            <strong>Produit acheté :</strong> PC Gaming RTX 4080
+          </div>
+        </div>
+
+        <div class="avis-item">
+          <h3>Louis Angeline</h3>
+          <div class="rating">
+            <span class="stars">★★★★★</span>
+            <span class="date">Il y a 3 semaines</span>
+          </div>
+          <p>"Le PC que j'ai commandé fonctionne parfaitement. Montage professionnel et livraison soignée. Service client au top !"</p>
+          <div class="product-info">
+            <strong>Produit acheté :</strong> Ordinateur Gaming Alienware
+          </div>
+        </div>
+
+        <div class="avis-item">
+          <h3>Sophie Martin</h3>
+          <div class="rating">
+            <span class="stars">★★★★★</span>
+            <span class="date">Il y a 1 mois</span>
+          </div>
+          <p>"Première commande très satisfaisante. Le laptop est exactement comme décrit, livraison rapide et emballage parfait. Merci XXL Fourniture !"</p>
+          <div class="product-info">
+            <strong>Produit acheté :</strong> Dell XPS 15
+          </div>
+        </div>
+
+        <div class="avis-item">
+          <h3>Pierre Dubois</h3>
+          <div class="rating">
+            <span class="stars">★★★★☆</span>
+            <span class="date">Il y a 1 mois</span>
+          </div>
+          <p>"Très bon service. Les accessoires gaming sont de qualité et les prix sont corrects. Je recommande pour tous les gamers !"</p>
+          <div class="product-info">
+            <strong>Produit acheté :</strong> Clavier Gaming RGB
+          </div>
+        </div>
+      </div>
+
+      <!-- Section pour ajouter un avis -->
+      <div class="add-review-section">
+        <h2>Partagez votre expérience</h2>
+        <form class="review-form" id="reviewForm">
+          <div class="form-group">
+            <label for="name">Votre nom *</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="product">Produit acheté</label>
+            <select id="product" name="product">
+              <option value="">Sélectionnez un produit</option>
+              <option value="smartphone">Smartphone</option>
+              <option value="ordinateur">Ordinateur</option>
+              <option value="laptop">Laptop</option>
+              <option value="accessoire">Accessoire</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label>Note *</label>
+            <div class="rating-input">
+              <input type="radio" id="star5" name="rating" value="5" required>
+              <label for="star5">★</label>
+              <input type="radio" id="star4" name="rating" value="4">
+              <label for="star4">★</label>
+              <input type="radio" id="star3" name="rating" value="3">
+              <label for="star3">★</label>
+              <input type="radio" id="star2" name="rating" value="2">
+              <label for="star2">★</label>
+              <input type="radio" id="star1" name="rating" value="1">
+              <label for="star1">★</label>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="comment">Votre avis *</label>
+            <textarea id="comment" name="comment" placeholder="Partagez votre expérience avec nous..." required></textarea>
+          </div>
+          
+          <button type="submit" class="submit-btn">
+            <i class="fas fa-paper-plane" aria-hidden="true"></i> Publier mon avis
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Notification -->
+  <div id="notification" class="notification" role="alert" aria-live="polite"></div>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Contact</h3>
+        <p><i class="fas fa-envelope" aria-hidden="true"></i> Email: <a href="mailto:contact@xxlfourniture.com">contact@xxlfourniture.com</a></p>
+        <p><i class="fas fa-phone" aria-hidden="true"></i> Téléphone: <a href="tel:+50946264966">+509 4626 4966</a></p>
+        <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Adresse: Port-au-Prince, Haïti</p>
+      </div>
+      <div class="footer-section">
+        <h3>Réseaux sociaux</h3>
+        <div class="social-links">
+          <a href="#" aria-label="Suivez-nous sur Facebook"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Suivez-nous sur Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Suivez-nous sur Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h3>Modes de paiement</h3>
+        <div class="payment-methods">
+          <i class="fab fa-cc-mastercard" aria-label="Mastercard" title="Mastercard"></i>
+          <i class="fab fa-cc-visa" aria-label="Visa" title="Visa"></i>
+          <i class="fas fa-money-bill-wave" aria-label="Espèces" title="Espèces"></i>
+          <i class="fas fa-mobile-alt" aria-label="Mobile Money" title="Mobile Money"></i>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="copyright">&copy; 2025 XXL Fourniture. Tous droits réservés. | <a href="#privacy">Confidentialité</a> | <a href="#terms">Conditions d'utilisation</a></p>
+    </div>
+  </footer>
+
+  <script>
+    // Fonction pour afficher les notifications
+    function showNotification(message, type = 'success') {
+      const notification = document.getElementById('notification');
+      notification.textContent = message;
+      
+      const colors = {
+        success: 'linear-gradient(135deg, #28a745 0%, #20c997 100%)',
+        error: 'linear-gradient(135deg, #dc3545 0%, #c82333 100%)',
+        info: 'linear-gradient(135deg, #17a2b8 0%, #138496 100%)'
+      };
+      
+      notification.style.background = colors[type];
+      notification.classList.add('show');
+      
+      setTimeout(() => {
+        notification.classList.remove('show');
+      }, 4000);
+    }
+
+    // Animation des statistiques
+    function animateStats() {
+      const stats = document.querySelectorAll('.stat-number');
+      stats.forEach(stat => {
+        const target = parseInt(stat.textContent);
+        const increment = target / 50;
+        let current = 0;
+        
+        const timer = setInterval(() => {
+          current += increment;
+          if (current >= target) {
+            current = target;
+            clearInterval(timer);
+          }
+          stat.textContent = Math.floor(current) + (stat.textContent.includes('%') ? '%' : '');
+        }, 50);
+      });
+    }
+
+    // Gestion du formulaire d'avis
+    document.getElementById('reviewForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const formData = new FormData(this);
+      const name = formData.get('name');
+      const rating = formData.get('rating');
+      const comment = formData.get('comment');
+      
+      if (!name || !rating || !comment) {
+        showNotification('Veuillez remplir tous les champs obligatoires', 'error');
+        return;
+      }
+      
+      // Simulation d'envoi
+      const submitBtn = this.querySelector('.submit-btn');
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin" aria-hidden="true"></i> Envoi en cours...';
+      
+      setTimeout(() => {
+        showNotification('Merci pour votre avis ! Il sera publié après modération.', 'success');
+        this.reset();
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '<i class="fas fa-paper-plane" aria-hidden="true"></i> Publier mon avis';
+      }, 2000);
+    });
+
+    // Animation d'entrée des avis
+    function animateReviews() {
+      const reviews = document.querySelectorAll('.avis-item');
+      reviews.forEach((review, index) => {
+        setTimeout(() => {
+          review.style.opacity = '0';
+          review.style.transform = 'translateY(30px)';
+          review.style.transition = 'all 0.6s ease';
+          
+          setTimeout(() => {
+            review.style.opacity = '1';
+            review.style.transform = 'translateY(0)';
+          }, 100);
+        }, index * 200);
+      });
+    }
+
+    // Recherche d'avis
+    document.querySelector('.search').addEventListener('input', function(e) {
+      const searchTerm = e.target.value.toLowerCase();
+      const reviews = document.querySelectorAll('.avis-item');
+      
+      reviews.forEach(review => {
+        const name = review.querySelector('h3').textContent.toLowerCase();
+        const comment = review.querySelector('p').textContent.toLowerCase();
+        
+        if (name.includes(searchTerm) || comment.includes(searchTerm)) {
+          review.style.display = 'block';
+          review.style.animation = 'slideIn 0.5s ease';
+        } else {
+          review.style.display = 'none';
+        }
+      });
+    });
+
+    // Initialisation au chargement de la page
+    window.addEventListener('load', function() {
+      // Animation des statistiques
+      setTimeout(animateStats, 500);
+      
+      // Animation des avis
+      setTimeout(animateReviews, 1000);
+      
+      // Animation d'entrée générale
+      const main = document.querySelector('main');
+      main.style.opacity = '0';
+      main.style.transform = 'translateY(20px)';
+      main.style.transition = 'all 0.8s ease';
+      
+      setTimeout(() => {
+        main.style.opacity = '1';
+        main.style.transform = 'translateY(0)';
+      }, 200);
+    });
+
+    // Gestion des erreurs réseau
+    window.addEventListener('online', function() {
+      showNotification('Connexion internet rétablie', 'success');
+    });
+
+    window.addEventListener('offline', function() {
+      showNotification('Connexion internet perdue', 'error');
+    });
+
+    // Amélioration de l'accessibilité
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' && e.target.classList.contains('search')) {
+        e.target.blur();
+      }
+    });
+  </script>
+</body>
+</html>

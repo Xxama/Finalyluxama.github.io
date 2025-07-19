@@ -1,0 +1,87 @@
+{
+  "name": "XXL Fourniture - Boutique Tech en Ligne",
+  "short_name": "XXL Fourniture",
+  "description": "Votre boutique en ligne de produits tech. Smartphones, ordinateurs, laptops et accessoires aux meilleurs prix.",
+  "start_url": "/index55.html",
+  "display": "standalone",
+  "background_color": "#2e1457",
+  "theme_color": "#45297a",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "fr",
+  "dir": "ltr",
+  "categories": ["shopping", "technology", "electronics"],
+  "icons": [
+    {
+      "src": "image/favicon.ico",
+      "sizes": "16x16 32x32",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "image/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "image/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "image/screenshot-desktop.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "image/screenshot-mobile.png",
+      "sizes": "390x844",
+      "type": "image/png",
+      "form_factor": "narrow"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Smartphones",
+      "short_name": "Phones",
+      "description": "Voir les smartphones",
+      "url": "/phone.html",
+      "icons": [
+        {
+          "src": "image/icon-phone.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Ordinateurs",
+      "short_name": "PCs",
+      "description": "Voir les ordinateurs",
+      "url": "/ordi.html",
+      "icons": [
+        {
+          "src": "image/icon-pc.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Panier",
+      "short_name": "Cart",
+      "description": "Voir le panier",
+      "url": "/pannier.html",
+      "icons": [
+        {
+          "src": "image/icon-cart.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false
+} 

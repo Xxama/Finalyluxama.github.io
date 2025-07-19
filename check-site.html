@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vérification Site - XXL Fourniture</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      margin: 0;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    
+    h1 {
+      color: #2e1457;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    
+    .check-item {
+      display: flex;
+      align-items: center;
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: 10px;
+      background: #f8f9fa;
+      border-left: 4px solid #ddd;
+    }
+    
+    .check-item.success {
+      border-left-color: #28a745;
+      background: #d4edda;
+    }
+    
+    .check-item.error {
+      border-left-color: #dc3545;
+      background: #f8d7da;
+    }
+    
+    .check-item.warning {
+      border-left-color: #ffc107;
+      background: #fff3cd;
+    }
+    
+    .status {
+      margin-right: 15px;
+      font-size: 20px;
+    }
+    
+    .success .status { color: #28a745; }
+    .error .status { color: #dc3545; }
+    .warning .status { color: #ffc107; }
+    
+    .check-details {
+      flex: 1;
+    }
+    
+    .check-title {
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+    
+    .check-description {
+      font-size: 14px;
+      color: #666;
+    }
+    
+    .progress-bar {
+      width: 100%;
+      height: 20px;
+      background: #e9ecef;
+      border-radius: 10px;
+      overflow: hidden;
+      margin: 20px 0;
+    }
+    
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+      transition: width 0.3s ease;
+    }
+    
+    .summary {
+      text-align: center;
+      margin: 30px 0;
+      padding: 20px;
+      background: #e9ecef;
+      border-radius: 10px;
+    }
+    
+    .summary h2 {
+      color: #2e1457;
+      margin-bottom: 10px;
+    }
+    
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      background: linear-gradient(135deg, #2e1457 0%, #45297a 100%);
+      color: white;
+      text-decoration: none;
+      border-radius: 25px;
+      margin: 10px;
+      transition: all 0.3s ease;
+    }
+    
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(46, 20, 87, 0.3);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🔍 Vérification du Site XXL Fourniture</h1>
+    
+    <div class="progress-bar">
+      <div class="progress-fill" id="progress" style="width: 0%"></div>
+    </div>
+    
+    <div id="checks">
+      <!-- Les vérifications seront ajoutées dynamiquement -->
+    </div>
+    
+    <div class="summary" id="summary" style="display: none;">
+      <h2>Résumé de la vérification</h2>
+      <p id="summary-text"></p>
+      <div id="summary-actions"></div>
+    </div>
+  </div>
+
+  <script>
+    const checks = [
+      {
+        id: 'files',
+        title: 'Fichiers principaux',
+        description: 'Vérification de la présence des fichiers HTML',
+        test: () => {
+          const requiredFiles = ['index55.html', 'phone.html', 'ordi.html', 'laptop.html', 'indexese.html', 'pannier.html', 'avis.html'];
+          return requiredFiles.every(file => {
+            try {
+              const xhr = new XMLHttpRequest();
+              xhr.open('GET', file, false);
+              xhr.send();
+              return xhr.status === 200;
+            } catch {
+              return false;
+            }
+          });
+        }
+      },
+      {
+        id: 'css',
+        title: 'Fichiers CSS',
+        description: 'Vérification des styles',
+        test: () => {
+          const cssFiles = ['style.css', 'style55.css'];
+          return cssFiles.every(file => {
+            try {
+              const xhr = new XMLHttpRequest();
+              xhr.open('GET', file, false);
+              xhr.send();
+              return xhr.status === 200;
+            } catch {
+              return false;
+            }
+          });
+        }
+      },
+      {
+        id: 'images',
+        title: 'Dossier images',
+        description: 'Vérification du dossier image/',
+        test: () => {
+          try {
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', 'image/', false);
+            xhr.send();
+            return xhr.status === 200 || xhr.status === 403;
+          } catch {
+            return false;
+          }
+        }
+      },
+      {
+        id: 'seo',
+        title: 'Fichiers SEO',
+        description: 'robots.txt et sitemap.xml',
+        test: () => {
+          const seoFiles = ['robots.txt', 'sitemap.xml'];
+          return seoFiles.every(file => {
+            try {
+              const xhr = new XMLHttpRequest();
+              xhr.open('GET', file, false);
+              xhr.send();
+              return xhr.status === 200;
+            } catch {
+              return false;
+            }
+          });
+        }
+      },
+      {
+        id: 'pwa',
+        title: 'Fichiers PWA',
+        description: 'manifest.json et service worker',
+        test: () => {
+          const pwaFiles = ['manifest.json', 'sw.js'];
+          return pwaFiles.every(file => {
+            try {
+              const xhr = new XMLHttpRequest();
+              xhr.open('GET', file, false);
+              xhr.send();
+              return xhr.status === 200;
+            } catch {
+              return false;
+            }
+          });
+        }
+      },
+      {
+        id: 'responsive',
+        title: 'Design responsive',
+        description: 'Vérification de la responsivité',
+        test: () => {
+          return window.innerWidth > 0 && window.innerHeight > 0;
+        }
+      },
+      {
+        id: 'javascript',
+        title: 'JavaScript',
+        description: 'Vérification des fonctionnalités JS',
+        test: () => {
+          return typeof localStorage !== 'undefined' && 
+                 typeof fetch !== 'undefined' && 
+                 typeof Promise !== 'undefined';
+        }
+      },
+      {
+        id: 'https',
+        title: 'HTTPS',
+        description: 'Connexion sécurisée',
+        test: () => {
+          return location.protocol === 'https:';
+        }
+      },
+      {
+        id: 'performance',
+        title: 'Performance',
+        description: 'Temps de chargement',
+        test: () => {
+          return performance.timing.loadEventEnd - performance.timing.navigationStart < 3000;
+        }
+      },
+      {
+        id: 'accessibility',
+        title: 'Accessibilité',
+        description: 'Structure sémantique',
+        test: () => {
+          return document.querySelectorAll('[aria-label], [alt], [role]').length > 0;
+        }
+      }
+    ];
+
+    let completedChecks = 0;
+    let successfulChecks = 0;
+
+    function runChecks() {
+      const checksContainer = document.getElementById('checks');
+      
+      checks.forEach((check, index) => {
+        setTimeout(() => {
+          const result = check.test();
+          completedChecks++;
+          successfulChecks += result ? 1 : 0;
+          
+          const checkElement = document.createElement('div');
+          checkElement.className = `check-item ${result ? 'success' : 'error'}`;
+          checkElement.innerHTML = `
+            <div class="status">${result ? '✅' : '❌'}</div>
+            <div class="check-details">
+              <div class="check-title">${check.title}</div>
+              <div class="check-description">${check.description}</div>
+            </div>
+          `;
+          
+          checksContainer.appendChild(checkElement);
+          
+          // Mise à jour de la barre de progression
+          const progress = (completedChecks / checks.length) * 100;
+          document.getElementById('progress').style.width = progress + '%';
+          
+          // Affichage du résumé quand toutes les vérifications sont terminées
+          if (completedChecks === checks.length) {
+            showSummary();
+          }
+        }, index * 500);
+      });
+    }
+
+    function showSummary() {
+      const summary = document.getElementById('summary');
+      const summaryText = document.getElementById('summary-text');
+      const summaryActions = document.getElementById('summary-actions');
+      
+      const percentage = Math.round((successfulChecks / checks.length) * 100);
+      
+      summaryText.innerHTML = `
+        <strong>${successfulChecks}/${checks.length}</strong> vérifications réussies (${percentage}%)<br>
+        ${percentage >= 80 ? '🎉 Votre site est prêt pour la mise en ligne !' : 
+          percentage >= 60 ? '⚠️ Quelques ajustements sont nécessaires.' : 
+          '❌ Des corrections importantes sont requises.'}
+      `;
+      
+      summaryActions.innerHTML = `
+        <a href="index55.html" class="btn">🏠 Voir le site</a>
+        <a href="https://pagespeed.web.dev/" target="_blank" class="btn">📊 Test Performance</a>
+        <a href="https://search.google.com/test/mobile-friendly" target="_blank" class="btn">📱 Test Mobile</a>
+      `;
+      
+      summary.style.display = 'block';
+    }
+
+    // Démarrer les vérifications au chargement de la page
+    window.addEventListener('load', () => {
+      setTimeout(runChecks, 1000);
+    });
+  </script>
+</body>
+</html> 

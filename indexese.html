@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Découvrez notre gamme complète d'accessoires informatiques : claviers, souris, chaises gaming, casques et plus. Qualité premium aux meilleurs prix.">
+  <meta name="keywords" content="accessoires informatiques, clavier gaming, souris gaming, chaise gaming, casque audio, XXL Fourniture">
+  <title>Accessoires Informatiques - XXL Fourniture</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="image/favicon.ico">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  <!-- Preload critical resources -->
+  <link rel="preload" href="style.css" as="style">
+  
+  <style>
+    /* Améliorations CSS pour la page accessoires */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #2e1457 0%, #45297a 100%);
+      color: white;
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h1 {
+      margin: 0 0 1rem 0;
+      font-size: 2.5rem;
+      font-weight: 700;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 25px;
+      transition: all 0.3s ease;
+      font-weight: 500;
+      position: relative;
+      overflow: hidden;
+    }
+
+    nav a::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.2);
+      transition: left 0.3s ease;
+    }
+
+    nav a:hover::before {
+      left: 0;
+    }
+
+    nav a:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .product-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .product-column {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(10px);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .product-column:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .product-column h3 {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 1.8rem;
+      color: #2e1457;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      position: relative;
+    }
+
+    .product-column h3::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 3px;
+      background: linear-gradient(135deg, #2e1457 0%, #45297a 100%);
+      border-radius: 2px;
+    }
+
+    .product-card {
+      text-align: center;
+      border: 2px solid transparent;
+      border-radius: 15px;
+      margin-bottom: 1.5rem;
+      padding: 1.5rem;
+      background: #fff;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .product-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(135deg, #2e1457 0%, #45297a 100%);
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+
+    .product-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+      border-color: #2e1457;
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+      transition: transform 0.3s ease;
+    }
+
+    .product-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .product-card h4 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #333;
+      margin: 1rem 0;
+    }
+
+    .price {
+      font-weight: 700;
+      color: #28a745;
+      font-size: 1.3rem;
+      margin: 1rem 0;
+    }
+
+    .buy-btn {
+      display: inline-block;
+      background: linear-gradient(135deg, #2e1457 0%, #45297a 100%);
+      color: white;
+      padding: 12px 24px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .buy-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #45297a 0%, #5a3a8a 100%);
+      transition: left 0.3s ease;
+    }
+
+    .buy-btn:hover::before {
+      left: 0;
+    }
+
+    .buy-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(46, 20, 87, 0.3);
+    }
+
+    .buy-btn span {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Footer amélioré */
+    footer {
+      background: linear-gradient(135deg, #2e1457 0%, #45297a 100%);
+      color: white;
+      padding: 3rem 2rem 1rem;
+      margin-top: 3rem;
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .footer-section {
+      text-align: center;
+    }
+
+    .footer-section h3 {
+      margin-bottom: 1rem;
+      color: #fff;
+      font-size: 1.3rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .footer-section a {
+      color: white;
+      margin: 0 0.5rem;
+      font-size: 1.5rem;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    .footer-section a:hover {
+      color: #e74c3c;
+      transform: translateY(-3px);
+    }
+
+    .payment-methods {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .payment-methods i {
+      margin: 0 0.5rem;
+      font-size: 1.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .payment-methods i:hover {
+      transform: scale(1.2);
+      color: #e74c3c;
+    }
+
+    .copyright {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: #bdc3c7;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 1rem;
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+      .product-section {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+      }
+      
+      .product-column {
+        padding: 1.5rem;
+      }
+      
+      nav {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      
+      header h1 {
+        font-size: 2rem;
+      }
+    }
+
+    /* Loading states */
+    .loading {
+      opacity: 0.7;
+      pointer-events: none;
+    }
+
+    /* Notification styles */
+    .notification {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+      color: white;
+      padding: 15px 25px;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      z-index: 1000;
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+      font-weight: 600;
+      max-width: 300px;
+    }
+
+    /* Accessibility improvements */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    /* Cart badge */
+    .cart-badge {
+      background: #e74c3c;
+      color: white;
+      border-radius: 50%;
+      padding: 0.2rem 0.5rem;
+      font-size: 0.8rem;
+      font-weight: bold;
+      margin-left: 0.5rem;
+      animation: pulse 2s infinite;
+    }
+
+    /* Barre de recherche */
+    .search-container {
+      margin-top: 1.5rem;
+      text-align: center;
+    }
+
+    .search-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      max-width: 500px;
+      margin: 0 auto 1rem;
+      position: relative;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 12px 50px 12px 20px;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 25px;
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      font-size: 1rem;
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+
+    .search-input::placeholder {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .search-input:focus {
+      outline: none;
+      border-color: rgba(255, 255, 255, 0.8);
+      background: rgba(255, 255, 255, 0.2);
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    }
+
+    .search-btn {
+      position: absolute;
+      right: 5px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: linear-gradient(135deg, #2e1457 0%, #45297a 100%);
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      color: white;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .search-btn:hover {
+      background: linear-gradient(135deg, #45297a 0%, #5a3a8a 100%);
+      transform: translateY(-50%) scale(1.1);
+      box-shadow: 0 4px 15px rgba(46, 20, 87, 0.3);
+    }
+
+    .search-filters {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      background: rgba(255, 255, 255, 0.1);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 0.9rem;
+      font-weight: 500;
+      backdrop-filter: blur(10px);
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: rgba(255, 255, 255, 0.2);
+      border-color: rgba(255, 255, 255, 0.8);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+    }
+
+    .filter-btn.active {
+      background: linear-gradient(135deg, #2e1457 0%, #45297a 100%);
+      border-color: #2e1457;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🎮 Accessoires Gaming & Informatiques</h1>
+    <nav>
+      <a href="index55.html" aria-label="Retour à l'accueil">🏠 Accueil</a>
+      <a href="phone.html" aria-label="Voir les smartphones">📱 Smartphones</a>
+      <a href="ordi.html" aria-label="Voir les ordinateurs">🖥️ Ordinateurs</a>
+      <a href="laptop.html" aria-label="Voir les laptops">💻 Laptops</a>
+      <a href="pannier.html" aria-label="Voir le panier">
+        🛒 Panier <span class="cart-badge" id="cart-count">0</span>
+      </a>
+    </nav>
+    
+    <!-- Barre de recherche -->
+    <div class="search-container">
+      <div class="search-wrapper">
+        <input type="text" id="searchBar" placeholder="Rechercher un accessoire..." class="search-input" aria-label="Rechercher un accessoire">
+        <button type="button" id="searchBtn" class="search-btn" aria-label="Lancer la recherche">
+          <i class="fas fa-search" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div class="search-filters">
+        <button class="filter-btn active" data-category="all" aria-label="Voir tous les accessoires">Tous</button>
+        <button class="filter-btn" data-category="clavier" aria-label="Filtrer par claviers">⌨️ Claviers</button>
+        <button class="filter-btn" data-category="chaise" aria-label="Filtrer par chaises">🪑 Chaises</button>
+        <button class="filter-btn" data-category="souris" aria-label="Filtrer par souris">🖱️ Souris</button>
+        <button class="filter-btn" data-category="casque" aria-label="Filtrer par casques">🎧 Casques</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="product-section">
+      
+      <!-- Claviers -->
+      <div class="product-column">
+        <h3>⌨️ Claviers Gaming</h3>
+        <div class="product-card" data-category="clavier" data-price="200">
+          <img src="image/download (1).jpg" alt="Clavier gaming mécanique avec rétroéclairage RGB" loading="lazy">
+          <h4>Clavier Gaming RGB</h4>
+          <p class="price">$200</p>
+          <button class="buy-btn" onclick="addToCart('Clavier Gaming RGB', 200, 'image/download (1).jpg')" aria-label="Ajouter Clavier Gaming RGB au panier">
+            <span><i class="fas fa-shopping-cart" aria-hidden="true"></i> Ajouter</span>
+          </button>
+        </div>
+        
+        <div class="product-card" data-category="clavier" data-price="300">
+          <img src="image/download (2).jpg" alt="Clavier mécanique haute performance" loading="lazy">
+          <h4>Clavier Mécanique Pro</h4>
+          <p class="price">$300</p>
+          <button class="buy-btn" onclick="addToCart('Clavier Mécanique Pro', 300, 'image/download (2).jpg')" aria-label="Ajouter Clavier Mécanique Pro au panier">
+            <span><i class="fas fa-shopping-cart" aria-hidden="true"></i> Ajouter</span>
+          </button>
+        </div>
+        
+        <div class="product-card" data-category="clavier" data-price="200">
+          <img src="image/download.jpg" alt="Clavier compact sans fil" loading="lazy">
+          <h4>Clavier Compact Sans Fil</h4>
+          <p class="price">$200</p>
+          <button class="buy-btn" onclick="addToCart('Clavier Compact Sans Fil', 200, 'image/download.jpg')" aria-label="Ajouter Clavier Compact Sans Fil au panier">
+            <span><i class="fas fa-shopping-cart" aria-hidden="true"></i> Ajouter</span>
+          </button>
+        </div>
+        
+        <div class="product-card" data-category="clavier" data-price="300">
+          <img src="image/Clavier de jeu EWEADN GX810 avec fil - Rétro-éclairage LED, 104 touches grand format silencieux, clavier ergonomique noir, avec bouton rotatif, pour ordinateur de bureau et ordinateur portable, fournitures et ac.jpg" alt="Clavier EWEADN GX810 avec rétroéclairage LED" loading="lazy">
+          <h4>Clavier EWEADN GX810</h4>
+          <p class="price">$300</p>
+          <button class="buy-btn" onclick="addToCart('Clavier EWEADN GX810', 300, 'image/Clavier de jeu EWEADN GX810 avec fil - Rétro-éclairage LED, 104 touches grand format silencieux, clavier ergonomique noir, avec bouton rotatif, pour ordinateur de bureau et ordinateur portable, fournitures et ac.jpg')" aria-label="Ajouter Clavier EWEADN GX810 au panier">
+            <span><i class="fas fa-shopping-cart" aria-hidden="true"></i> Ajouter</span>
+          </button>
+        </div>
+        
+        <div class="product-card" data-category="clavier" data-price="100">
+          <img src="image/Clavier d'ordinateur portable isolé à boutons noirs pour ordinateur numérique _ Vecteur Premium.jpg" alt="Clavier portable compact" loading="lazy">
+          <h4>Clavier Portable</h4>
+          <p class="price">$100</p>
+          <button class="buy-btn" onclick="addToCart('Clavier Portable', 100, 'image/Clavier d\'ordinateur portable isolé à boutons noirs pour ordinateur numérique _ Vecteur Premium.jpg')" aria-label="Ajouter Clavier Portable au panier">
+            <span><i class="fas fa-shopping-cart" aria-hidden="true"></i> Ajouter</span>
+          </button>
+        </div>
+        
+        <div class="product-card" data-category="clavier" data-price="100">
+          <img src="image/Logitech K400 Plus Clavier Sans Fil Touch TV Avec Contrôle Média et Pavé Tactile, Clavier Francais AZERTY - Noir.jpg" alt="Logitech K400 Plus clavier sans fil avec pavé tactile" loading="lazy">
+          <h4>Logitech K400 Plus</h4>
+          <p class="price">$100</p>
+          <button class="buy-btn" onclick="addToCart('Logitech K400 Plus', 100, 'image/Logitech K400 Plus Clavier Sans Fil Touch TV Avec Contrôle Média et Pavé Tactile, Clavier Francais AZERTY - Noir.jpg')" aria-label="Ajouter Logitech K400 Plus au panier">
+            <span><i class="fas fa-shopping-cart" aria-hidden="true"></i> Ajouter</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Chaises -->
+      <div class="product-column">
+        <h3>🪑 Chaises Gaming</h3>
+        <div class="product-card" data-category="chaise" data-price="300">
+          <img src="image/AutoFull C3 Gaming Chair Computer Chair with Ergonomic Wingless Cushion PU Leather Racing Style PC.jpg" alt="AutoFull C3 chaise gaming ergonomique" loading="lazy">
+          <h4>AutoFull C3 Gaming</h4>
+          <p class="price">$300</p>
+          <button class="buy-btn" onclick="addToCart('AutoFull C3 Gaming', 300, 'image/AutoFull C3 Gaming Chair Computer Chair with Ergonomic Wingless Cushion PU Leather Racing Style PC.jpg')" aria-label="Ajouter AutoFull C3 Gaming au panier">
+            <span><i class="fas fa-shopping-cart" aria-hidden="true"></i> Ajouter</span>
+          </button>
+        </div>
+        
+        <div class="product-card" data-category="chaise" data-price="250">
+          <img src="image/Chaise De Bureau - Chaise Gaming Fauteuil Gamer Ergonomique Chaise Gamer Cuir.jpg" alt="Chaise gaming ergonomique en cuir" loading="lazy">
+          <h4>Chaise Gaming Cuir</h4>
+          <p class="price">$250</p>
+          <button class="buy-btn" onclick="addToCart('Chaise Gaming Cuir', 250, 'image/Chaise De Bureau - Chaise Gaming Fauteuil Gamer Ergonomique Chaise Gamer Cuir.jpg')" aria-label="Ajouter Chaise Gaming Cuir au panier">
+            <span><i class="fas fa-shopping-cart" aria-hidden="true"></i> Ajouter</span>
+          </button>
+        </div>
+        
+        <div class="product-card" data-category="chaise" data-price="300">
+          <img src="image/Esta não é apenas uma cadeira_ É o trono da sua jornada gamer_.jpg" alt="Chaise gaming premium trône gamer" loading="lazy">
+          <h4>Trône Gaming Premium</h4>
+          <p class="price">$300</p>
+          <button class="buy-btn" onclick="addToCart('Trône Gaming Premium', 300, 'image/Esta não é apenas uma cadeira_ É o trono da sua jornada gamer_.jpg')" aria-label="Ajouter Trône Gaming Premium au panier">
+            <span><i class="fas fa-shopping-cart" aria-hidden="true"></i> Ajouter</span>
+          </button>
+        </div>
+        
+        <div class="product-card" data-category="chaise" data-price="200">
+          <img src="image/Gaming Chair with Massage and LED Lights Ergonomic Video Game Chairs with Footrest High Back Reclining Computer Chair with Adjustable Lumbar Support White and Black.jpg" alt="Chaise gaming avec massage et LED" loading="lazy">
+          <h4>Chaise Gaming LED</h4>
+          <p class="price">$200</p>
+          <button class="buy-btn" onclick="addToCart('Chaise Gaming LED', 200, 'image/Gaming Chair with Massage and LED Lights Ergonomic Video Game Chairs with Footrest High Back Reclining Computer Chair with Adjustable Lumbar Support White and Black.jpg')" aria-label="Ajouter Chaise Gaming LED au panier">
+            <span><i class="fas fa-shopping-cart" aria-hidden="true"></i> Ajouter</span>
+          </button>
+        </div>
+        
+        <div class="product-card" data-category="chaise" data-price="400">
+          <img src="image/Holiday Gaming Wonderland_ Christmas 2024.jpg" alt="Chaise gaming édition spéciale" loading="lazy">
+          <h4>Chaise Gaming Édition Spéciale</h4>
+          <p class="price">$400</p>
+          <button class="buy-btn" onclick="addToCart('Chaise Gaming Édition Spéciale', 400, 'image/Holiday Gaming Wonderland_ Christmas 2024.jpg')" aria-label="Ajouter Chaise Gaming Édition Spéciale au panier">
+            <span><i class="fas fa-shopping-cart" aria-hidden="true"></i> Ajouter</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Souris -->
+      <div class="product-column">
+        <h3>🖱️ Souris Gaming</h3>
+        <div class="product-card" data-category="souris" data-price="500">
+          <img src="image/tests et avis sur la High Tech - crazy-geek_fr.jpg" alt="Souris gaming haute performance" loading="lazy">
+          <h4>Souris Gaming Pro</h4>
+          <p class="price">$500</p>
+          <button class="buy-btn" onclick="addToCart('Souris Gaming Pro', 500, 'image/tests et avis sur la High Tech - crazy-geek_fr.jpg')" aria-label="Ajouter Souris Gaming Pro au panier">
+            <span><i class="fas fa-shopping-cart" aria-hidden="true"></i> Ajouter</span>
+          </button>
+        </div>
+        
+        <div class="product-card" data-category="souris" data-price="400">
+          <img src="image/Batman Mouse.jpg" alt="Souris gaming thème Batman" loading="lazy">
+          <h4>Souris Batman</h4>
+          <p class="price">$400</p>
+          <button class="buy-btn" onclick="addToCart('Souris Batman', 400, 'image/Batman Mouse.jpg')" aria-label="Ajouter Souris Batman au panier">
+            <span><i class="fas fa-shopping-cart" aria-hidden="true"></i> Ajouter</span>
+          </button>
+        </div>
+        
+        <div class="product-card" data-category="souris" data-price="90">
+          <img src="image/Black Panther's Mouse.jpg" alt="Souris gaming thème Black Panther" loading="lazy">
+          <h4>Souris Black Panther</h4>
+          <p class="price">$90</p>
+          <button class="buy-btn" onclick="addToCart('Souris Black Panther', 90, 'image/Black Panther\'s Mouse.jpg')" aria-label="Ajouter Souris Black Panther au panier">
+            <span><i class="fas fa-shopping-cart" aria-hidden="true"></i> Ajouter</span>
+          </button>
+        </div>
+        
+        <div class="product-card" data-category="souris" data-price="80">
+          <img src="image/_Elite Precision_ Ultra Custom Wireless Mouse_.jpg" alt="Souris sans fil Elite Precision" loading="lazy">
+          <h4>Elite Precision Wireless</h4>
+          <p class="price">$80</p>
+          <button class="buy-btn" onclick="addToCart('Elite Precision Wireless', 80, 'image/_Elite Precision_ Ultra Custom Wireless Mouse_.jpg')" aria-label="Ajouter Elite Precision Wireless au panier">
+            <span><i class="fas fa-shopping-cart" aria-hidden="true"></i> Ajouter</span>
+          </button>
+        </div>
+        
+        <div class="product-card" data-category="souris" data-price="50">
+          <img src="image/5 Best Silent Gaming Mouse In 2025_ Buyer's Guide Included.jpg" alt="Souris gaming silencieuse" loading="lazy">
+          <h4>Souris Gaming Silencieuse</h4>
+          <p class="price">$50</p>
+          <button class="buy-btn" onclick="addToCart('Souris Gaming Silencieuse', 50, 'image/5 Best Silent Gaming Mouse In 2025_ Buyer\'s Guide Included.jpg')" aria-label="Ajouter Souris Gaming Silencieuse au panier">
+            <span><i class="fas fa-shopping-cart" aria-hidden="true"></i> Ajouter</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Casques -->
+      <div class="product-column">
+        <h3>🎧 Casques Audio</h3>
+        <div class="product-card" data-category="casque" data-price="50">
+          <img src="image/download (3).jpg" alt="Casque audio gaming" loading="lazy">
+          <h4>Casque Gaming</h4>
+          <p class="price">$50</p>
+          <button class="buy-btn" onclick="addToCart('Casque Gaming', 50, 'image/download (3).jpg')" aria-label="Ajouter Casque Gaming au panier">
+            <span><i class="fas fa-shopping-cart" aria-hidden="true"></i> Ajouter</span>
+          </button>
+        </div>
+        
+        <div class="product-card" data-category="casque" data-price="40">
+          <img src="image/download (4).jpg" alt="Casque audio compact" loading="lazy">
+          <h4>Casque Compact</h4>
+          <p class="price">$40</p>
+          <button class="buy-btn" onclick="addToCart('Casque Compact', 40, 'image/download (4).jpg')" aria-label="Ajouter Casque Compact au panier">
+            <span><i class="fas fa-shopping-cart" aria-hidden="true"></i> Ajouter</span>
+          </button>
+        </div>
+        
+        <div class="product-card" data-category="casque" data-price="60">
+          <img src="image/Logitech G – 733 LIGHTSPEED – Casque de jeu sans fil avec bandeau de suspension, LIGHTSYNC RGB, Blue Voice Mic Techonolgy et PRO-G Audio, noir.jpg" alt="Logitech G733 LIGHTSPEED casque sans fil" loading="lazy">
+          <h4>Logitech G733 LIGHTSPEED</h4>
+          <p class="price">$60</p>
+          <button class="buy-btn" onclick="addToCart('Logitech G733 LIGHTSPEED', 60, 'image/Logitech G – 733 LIGHTSPEED – Casque de jeu sans fil avec bandeau de suspension, LIGHTSYNC RGB, Blue Voice Mic Techonolgy et PRO-G Audio, noir.jpg')" aria-label="Ajouter Logitech G733 LIGHTSPEED au panier">
+            <span><i class="fas fa-shopping-cart" aria-hidden="true"></i> Ajouter</span>
+          </button>
+        </div>
+        
+        <div class="product-card" data-category="casque" data-price="80">
+          <img src="image/Logitech G733 K_DA Casque Gaming Sans Fil LIGHTSPEED, LIGHTSYNC RVB, Micro avec Blue VO!CE, T___.jpg" alt="Logitech G733 K/DA édition spéciale" loading="lazy">
+          <h4>Logitech G733 K/DA</h4>
+          <p class="price">$80</p>
+          <button class="buy-btn" onclick="addToCart('Logitech G733 K/DA', 80, 'image/Logitech G733 K_DA Casque Gaming Sans Fil LIGHTSPEED, LIGHTSYNC RVB, Micro avec Blue VO!CE, T___.jpg')" aria-label="Ajouter Logitech G733 K/DA au panier">
+            <span><i class="fas fa-shopping-cart" aria-hidden="true"></i> Ajouter</span>
+          </button>
+        </div>
+        
+        <div class="product-card" data-category="casque" data-price="80">
+          <img src="image/JBL Tune 720BT, casque audio sans fil, léger et confortable, Bluetooth 5_3, autonomie jusqu'à 76 h, charge rapide, son JBL Pure Bass, noir.jpg" alt="JBL Tune 720BT casque Bluetooth" loading="lazy">
+          <h4>JBL Tune 720BT</h4>
+          <p class="price">$80</p>
+          <button class="buy-btn" onclick="addToCart('JBL Tune 720BT', 80, 'image/JBL Tune 720BT, casque audio sans fil, léger et confortable, Bluetooth 5_3, autonomie jusqu\'à 76 h, charge rapide, son JBL Pure Bass, noir.jpg')" aria-label="Ajouter JBL Tune 720BT au panier">
+            <span><i class="fas fa-shopping-cart" aria-hidden="true"></i> Ajouter</span>
+          </button>
+        </div>
+        
+        <div class="product-card" data-category="casque" data-price="100">
+          <img src="image/Mine h.jpg" alt="Casque audio premium" loading="lazy">
+          <h4>Casque Premium</h4>
+          <p class="price">$100</p>
+          <button class="buy-btn" onclick="addToCart('Casque Premium', 100, 'image/Mine h.jpg')" aria-label="Ajouter Casque Premium au panier">
+            <span><i class="fas fa-shopping-cart" aria-hidden="true"></i> Ajouter</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Contact</h3>
+        <p><i class="fas fa-envelope" aria-hidden="true"></i> Email: <a href="mailto:contact@xxlfourniture.com">contact@xxlfourniture.com</a></p>
+        <p><i class="fas fa-phone" aria-hidden="true"></i> Téléphone: <a href="tel:+50946264966">+509 4626 4966</a></p>
+        <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Adresse: Port-au-Prince, Haïti</p>
+      </div>
+      <div class="footer-section">
+        <h3>Réseaux sociaux</h3>
+        <div class="social-links">
+          <a href="#" aria-label="Suivez-nous sur Facebook"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Suivez-nous sur Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Suivez-nous sur Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h3>Modes de paiement</h3>
+        <div class="payment-methods">
+          <i class="fab fa-cc-mastercard" aria-label="Mastercard" title="Mastercard"></i>
+          <i class="fab fa-cc-visa" aria-label="Visa" title="Visa"></i>
+          <i class="fas fa-money-bill-wave" aria-label="Espèces" title="Espèces"></i>
+          <i class="fas fa-mobile-alt" aria-label="Mobile Money" title="Mobile Money"></i>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="copyright">&copy; 2025 XXL Fourniture. Tous droits réservés. | <a href="#privacy">Confidentialité</a> | <a href="#terms">Conditions d'utilisation</a></p>
+    </div>
+  </footer>
+
+  <script>
+    // Fonction améliorée pour ajouter au panier
+    function addToCart(name, price, image) {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      
+      // Vérifier si le produit existe déjà dans le panier
+      const existingProduct = cart.find(item => item.name === name);
+      
+      if (existingProduct) {
+        existingProduct.quantity = (existingProduct.quantity || 1) + 1;
+        showNotification(`${name} - Quantité mise à jour dans le panier !`, 'info');
+      } else {
+        cart.push({ 
+          name, 
+          price, 
+          image,
+          quantity: 1,
+          addedAt: new Date().toISOString()
+        });
+        showNotification(`${name} ajouté au panier !`, 'success');
+      }
+      
+      localStorage.setItem('cart', JSON.stringify(cart));
+      updateCartCount();
+      
+      // Animation du bouton
+      const button = event.target.closest('.buy-btn');
+      if (button) {
+        button.innerHTML = '<span><i class="fas fa-check" aria-hidden="true"></i> Ajouté !</span>';
+        button.style.background = 'linear-gradient(135deg, #28a745 0%, #20c997 100%)';
+        
+        setTimeout(() => {
+          button.innerHTML = '<span><i class="fas fa-shopping-cart" aria-hidden="true"></i> Ajouter</span>';
+          button.style.background = 'linear-gradient(135deg, #2e1457 0%, #45297a 100%)';
+        }, 2000);
+      }
+    }
+
+    // Mise à jour du compteur du panier
+    function updateCartCount() {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const totalItems = cart.reduce((total, item) => total + (item.quantity || 1), 0);
+      document.getElementById('cart-count').textContent = totalItems;
+    }
+
+    // Fonction de notification améliorée
+    function showNotification(message, type = 'info') {
+      const notification = document.createElement('div');
+      notification.className = `notification notification-${type}`;
+      notification.textContent = message;
+      
+      const colors = {
+        success: 'linear-gradient(135deg, #28a745 0%, #20c997 100%)',
+        error: 'linear-gradient(135deg, #dc3545 0%, #c82333 100%)',
+        info: 'linear-gradient(135deg, #17a2b8 0%, #138496 100%)'
+      };
+      
+      notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: ${colors[type]};
+        color: white;
+        padding: 15px 25px;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        z-index: 1000;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        font-weight: 600;
+        max-width: 300px;
+      `;
+      
+      document.body.appendChild(notification);
+      
+      // Animation d'entrée
+      setTimeout(() => {
+        notification.style.transform = 'translateX(0)';
+      }, 100);
+      
+      // Suppression automatique
+      setTimeout(() => {
+        notification.style.transform = 'translateX(100%)';
+        setTimeout(() => {
+          if (document.body.contains(notification)) {
+            document.body.removeChild(notification);
+          }
+        }, 300);
+      }, 4000);
+    }
+
+    // Filtrage des produits par catégorie
+    function filterProducts(category) {
+      const products = document.querySelectorAll('.product-card');
+      
+      products.forEach(product => {
+        if (category === 'all' || product.dataset.category === category) {
+          product.style.display = 'block';
+          product.style.animation = 'fadeIn 0.5s ease';
+        } else {
+          product.style.display = 'none';
+        }
+      });
+    }
+
+    // Recherche de produits
+    function searchProducts(query) {
+      const products = document.querySelectorAll('.product-card');
+      const searchTerm = query.toLowerCase();
+      
+      products.forEach(product => {
+        const name = product.querySelector('h4').textContent.toLowerCase();
+        const category = product.dataset.category;
+        
+        if (name.includes(searchTerm) || category.includes(searchTerm)) {
+          product.style.display = 'block';
+        } else {
+          product.style.display = 'none';
+        }
+      });
+    }
+
+    // Amélioration de l'accessibilité
+    document.addEventListener('keydown', function(e) {
+      // Navigation au clavier
+      if (e.key === 'Tab') {
+        // Gestion de la navigation par tab
+        const focusableElements = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
+        const firstFocusableElement = document.querySelector(focusableElements);
+        const focusableContent = document.querySelectorAll(focusableElements);
+        const lastFocusableElement = focusableContent[focusableContent.length - 1];
+        
+        if (e.shiftKey) {
+          if (document.activeElement === firstFocusableElement) {
+            lastFocusableElement.focus();
+            e.preventDefault();
+          }
+        } else {
+          if (document.activeElement === lastFocusableElement) {
+            firstFocusableElement.focus();
+            e.preventDefault();
+          }
+        }
+      }
+    });
+
+    // Lazy loading pour les images
+    if ('IntersectionObserver' in window) {
+      const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const img = entry.target;
+            img.src = img.dataset.src || img.src;
+            img.classList.remove('lazy');
+            imageObserver.unobserve(img);
+          }
+        });
+      });
+
+      document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+        imageObserver.observe(img);
+      });
+    }
+
+    // Initialisation au chargement de la page
+    window.addEventListener('load', function() {
+      updateCartCount();
+      
+      // Animation d'entrée des produits
+      const products = document.querySelectorAll('.product-card');
+      products.forEach((product, index) => {
+        setTimeout(() => {
+          product.style.opacity = '0';
+          product.style.transform = 'translateY(20px)';
+          product.style.transition = 'all 0.5s ease';
+          
+          setTimeout(() => {
+            product.style.opacity = '1';
+            product.style.transform = 'translateY(0)';
+          }, 100);
+        }, index * 100);
+      });
+    });
+
+    // Gestion des erreurs réseau
+    window.addEventListener('online', function() {
+      showNotification('Connexion internet rétablie', 'success');
+    });
+
+    window.addEventListener('offline', function() {
+      showNotification('Connexion internet perdue', 'error');
+    });
+
+    // Fonctionnalité de recherche et filtrage
+    const searchInput = document.getElementById('searchBar');
+    const searchBtn = document.getElementById('searchBtn');
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const products = document.querySelectorAll('.product-card');
+
+    let currentFilter = 'all';
+    let currentSearch = '';
+
+    // Fonction de recherche
+    function performSearch() {
+      const searchTerm = searchInput.value.toLowerCase().trim();
+      currentSearch = searchTerm;
+      
+      products.forEach(product => {
+        const name = product.querySelector('h4').textContent.toLowerCase();
+        const category = product.dataset.category;
+        const matchesSearch = searchTerm === '' || name.includes(searchTerm);
+        const matchesFilter = currentFilter === 'all' || category === currentFilter;
+        
+        if (matchesSearch && matchesFilter) {
+          product.style.display = 'block';
+          product.style.animation = 'fadeIn 0.5s ease';
+        } else {
+          product.style.display = 'none';
+        }
+      });
+      
+      // Afficher un message si aucun résultat
+      const visibleProducts = document.querySelectorAll('.product-card[style*="display: block"]');
+      if (visibleProducts.length === 0 && (searchTerm !== '' || currentFilter !== 'all')) {
+        showNotification('Aucun produit trouvé pour votre recherche', 'info');
+      }
+    }
+
+    // Fonction de filtrage
+    function filterProducts(category) {
+      currentFilter = category;
+      
+      // Mettre à jour les boutons de filtre
+      filterBtns.forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.dataset.category === category) {
+          btn.classList.add('active');
+        }
+      });
+      
+      // Appliquer le filtre
+      products.forEach(product => {
+        const productCategory = product.dataset.category;
+        const name = product.querySelector('h4').textContent.toLowerCase();
+        const matchesSearch = currentSearch === '' || name.includes(currentSearch);
+        const matchesFilter = category === 'all' || productCategory === category;
+        
+        if (matchesSearch && matchesFilter) {
+          product.style.display = 'block';
+          product.style.animation = 'fadeIn 0.5s ease';
+        } else {
+          product.style.display = 'none';
+        }
+      });
+    }
+
+    // Événements de recherche
+    searchInput.addEventListener('input', performSearch);
+    searchInput.addEventListener('keyup', function(e) {
+      if (e.key === 'Enter') {
+        performSearch();
+      }
+    });
+
+    searchBtn.addEventListener('click', performSearch);
+
+    // Événements de filtrage
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', function() {
+        const category = this.dataset.category;
+        filterProducts(category);
+      });
+    });
+
+    // Animation d'apparition pour les produits
+    const fadeInAnimation = [
+      { opacity: 0, transform: 'translateY(20px)' },
+      { opacity: 1, transform: 'translateY(0)' }
+    ];
+
+    const fadeInTiming = {
+      duration: 500,
+      easing: 'ease-out'
+    };
+
+    // Fonction pour animer les produits visibles
+    function animateVisibleProducts() {
+      const visibleProducts = document.querySelectorAll('.product-card[style*="display: block"]');
+      visibleProducts.forEach((product, index) => {
+        setTimeout(() => {
+          product.animate(fadeInAnimation, fadeInTiming);
+        }, index * 100);
+      });
+    }
+
+    // Observer les changements de visibilité
+    const observer = new MutationObserver(function(mutations) {
+      mutations.forEach(function(mutation) {
+        if (mutation.type === 'attributes' && mutation.attributeName === 'style') {
+          if (mutation.target.style.display === 'block') {
+            mutation.target.animate(fadeInAnimation, fadeInTiming);
+          }
+        }
+      });
+    });
+
+    // Observer tous les produits
+    products.forEach(product => {
+      observer.observe(product, {
+        attributes: true,
+        attributeFilter: ['style']
+      });
+    });
+  </script>
+</body>
+</html>

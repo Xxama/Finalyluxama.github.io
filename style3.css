@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Ubuntu", sans-serif;
+}
+body{
+    background-color: #ece2ea;
+}
+header{
+    padding: 20px 8%;;
+}
+section{
+    padding: 70px 10%
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.logo{
+    font-weight: bold;
+    font-size: 30px;
+}
+.logo-div{width: 30%;
+}
+.logo span{
+    color:rgb(66, 2, 2);
+}
+ul{
+    display: flex;
+    justify-content: center;
+
+    width: 50% ;
+    list-style: none;
+}
+ul li{
+    padding: 10px 25px;
+}
+ul li a{
+    text-decoration: none;
+    color: black;
+    transition: 0.5s;
+    font-size: 16px;
+   
+}
+ul li a:hover {
+background-color: #986161;
+padding: 16px;
+color: #000000;
+font-weight: bold;
+border-radius: 17px;
+} 
+
+.btn-header {
+width: 30%;
+display: flex;
+justify-content: end;
+}
+.btn{
+    color: #000;
+    background-color:rgb(84, 1, 70);
+    border:2px solid #f3aad6;
+    padding: 15px 30px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor:pointer;
+    box-shadow: 5px 5px 30px white;
+    transition: 0.5s;
+}
+.btn:hover{
+    background-color: #735b5b;
+    transform: rotate(5deg);
+}
+.btn i{
+    margin-right: 5px;
+}
+.produits{
+    text-align: left;
+    font-size: 30px;
+    font-weight: 300px;
+    margin-left: 80px;
+    color: #424144;
+
+}
+.section_produit{
+    padding: 40px 5%;
+}
+.produits{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+.produits .carte{
+    width:  310px;
+    background: #f5f5f5;
+    bottom: 0 10px 20px  rgba(0,0,0,0.3);
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
