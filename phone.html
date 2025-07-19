@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Découvrez notre gamme complète de smartphones : iPhone, Samsung, Xiaomi et plus. Les dernières nouveautés aux meilleurs prix.">
+  <meta name="keywords" content="smartphones, iPhone, Samsung, Xiaomi, mobile, téléphone, XXL Fourniture">
+  <title>Smartphones - XXL Fourniture</title>
+  <link rel="icon" type="image/x-icon" href="image/favicon.ico">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="preload" href="style.css" as="style">
+  
+  <style>
+    /* Améliorations CSS pour la page smartphones */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(1135deg, #2e1457 0%, #45297a 70%);
+      color: white;
+      padding: 0.5rem;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h1 {
+      margin: 0 0 0.3rem 0;
+      font-size: 1.4rem;
+      font-weight: 700;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 0.2rem 0.6rem;
+      border-radius: 15px;
+      transition: all 0.3s ease;
+      font-weight: 500;
+      position: relative;
+      overflow: hidden;
+      font-size: 0.8rem;
+    }
+
+    nav a::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.2);
+      transition: left 0.3s ease;
+    }
+
+    nav a:hover::before {
+      left: 0;
+    }
+
+    nav a:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .product-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding-top: 0.5rem;
+    }
+
+    .product-column {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(10px);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .product-column:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .product-column h3 {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 1.8rem;
+      color: #2e1457;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      position: relative;
+    }
+
+    .product-column h3::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 3px;
+      background: linear-gradient(135deg, #2e1457 0%, #45297a 100%);
+      border-radius: 2px;
+    }
+
+    .product-card {
+      text-align: center;
+      border: 2px solid transparent;
+      border-radius: 15px;
+      margin-bottom: 1.5rem;
+      padding: 1.5rem;
+      background: #fff;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .product-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(135deg, #2e1457 0%, #45297a 100%);
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+
+    .product-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+      border-color: #2e1457;
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+      transition: transform 0.3s ease;
+    }
+
+    .product-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .product-card h4 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #333;
+      margin: 1rem 0;
+    }
+
+    .price {
+      font-weight: 700;
+      color: #28a745;
+      font-size: 1.3rem;
+      margin: 1rem 0;
+    }
+
+    .buy-btn {
+      display: inline-block;
+      background: linear-gradient(135deg, #2e1457 0%, #45297a 100%);
+      color: white;
+      padding: 12px 24px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .buy-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #45297a 0%, #5a3a8a 100%);
+      transition: left 0.3s ease;
+    }
+
+    .buy-btn:hover::before {
+      left: 0;
+    }
+
+    .buy-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(46, 20, 87, 0.3);
+    }
+
+    .buy-btn span {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Footer amélioré */
+    footer {
+      background: linear-gradient(135deg, #2e1457 0%, #45297a 100%);
+      color: white;
+      padding: 3rem 2rem 1rem;
+      margin-top: 3rem;
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .footer-section {
+      text-align: center;
+    }
+
+    .footer-section h3 {
+      margin-bottom: 1rem;
+      color: #fff;
+      font-size: 1.3rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .footer-section a {
+      color: white;
+      margin: 0 0.5rem;
+      font-size: 1.5rem;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    .footer-section a:hover {
+      color: #e74c3c;
+      transform: translateY(-3px);
+    }
+
+    .payment-methods {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .payment-methods i {
+      margin: 0 0.5rem;
+      font-size: 1.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .payment-methods i:hover {
+      transform: scale(1.2);
+      color: #e74c3c;
+    }
+
+    .copyright {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: #bdc3c7;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 1rem;
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+      .product-section {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+      }
+      
+      .product-column {
+        padding: 1.5rem;
+      }
+      
+      nav {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      
+      header h1 {
+        font-size: 2rem;
+      }
+    }
+
+    /* Loading states */
+    .loading {
+      opacity: 0.7;
+      pointer-events: none;
+    }
+
+    /* Notification styles */
+    .notification {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+      color: white;
+      padding: 15px 25px;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      z-index: 1000;
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+      font-weight: 600;
+      max-width: 300px;
+    }
+
+    /* Accessibility improvements */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    /* Cart badge */
+    .cart-badge {
+      background: #e74c3c;
+      color: white;
+      border-radius: 50%;
+      padding: 0.2rem 0.5rem;
+      font-size: 0.8rem;
+      font-weight: bold;
+      margin-left: 0.5rem;
+      animation: pulse 2s infinite;
+    }
+
+    /* Barre de recherche */
+    .search-container {
+      margin-top: 0.5rem;
+      text-align: center;
+    }
+
+    .search-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      max-width: 400px;
+      margin: 0 auto 0.3rem;
+      position: relative;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 6px 40px 6px 12px;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 15px;
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      font-size: 0.8rem;
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+
+    .search-input::placeholder {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .search-input:focus {
+      outline: none;
+      border-color: rgba(255, 255, 255, 0.8);
+      background: rgba(255, 255, 255, 0.2);
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    }
+
+    .search-btn {
+      position: absolute;
+      right: 2px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: linear-gradient(135deg, #2e1457 0%, #45297a 100%);
+      border: none;
+      border-radius: 50%;
+      width: 28px;
+      height: 28px;
+      color: white;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .search-btn:hover {
+      background: linear-gradient(135deg, #45297a 0%, #5a3a8a 100%);
+      transform: translateY(-50%) scale(1.1);
+      box-shadow: 0 4px 15px rgba(46, 20, 87, 0.3);
+    }
+
+    .search-filters {
+      display: flex;
+      justify-content: center;
+      gap: 0.2rem;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      background: rgba(255, 255, 255, 0.1);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      color: white;
+      padding: 4px 8px;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 0.7rem;
+      font-weight: 500;
+      backdrop-filter: blur(10px);
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: rgba(255, 255, 255, 0.2);
+      border-color: rgba(255, 255, 255, 0.8);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+    }
+
+    .filter-btn.active {
+      background: linear-gradient(135deg, #2e1457 0%, #45297a 100%);
+      border-color: #2e1457;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>📱 Smartphones & Mobiles</h1>
+    <nav>
+      <a href="index55.html" aria-label="Retour à l'accueil">🏠 Accueil</a>
+      <a href="indexese.html" aria-label="Voir les accessoires">🎮 Accessoires</a>
+      <a href="ordi.html" aria-label="Voir les ordinateurs">🖥️ Ordinateurs</a>
+      <a href="laptop.html" aria-label="Voir les laptops">💻 Laptops</a>
+      <a href="pannier.html" aria-label="Voir le panier">
+        🛒 Panier <span class="cart-badge" id="cart-count">0</span>
+      </a>
+    </nav>
+    
+    <!-- Barre de recherche -->
+    <div class="search-container">
+      <div class="search-wrapper">
+        <input type="text" id="searchBar" placeholder="Rechercher un smartphone..." class="search-input" aria-label="Rechercher un smartphone">
+        <button type="button" id="searchBtn" class="search-btn" aria-label="Lancer la recherche">
+          <i class="fas fa-search" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div class="search-filters">
+        <button class="filter-btn active" data-category="all" aria-label="Voir tous les smartphones">Tous</button>
+        <button class="filter-btn" data-category="iphone" aria-label="Filtrer par iPhone">🍎 iPhone</button>
+        <button class="filter-btn" data-category="samsung" aria-label="Filtrer par Samsung">📱 Samsung</button>
+        <button class="filter-btn" data-category="xiaomi" aria-label="Filtrer par Xiaomi">📲 Xiaomi</button>
+        <button class="filter-btn" data-category="sony" aria-label="Filtrer par Sony">📱 Sony</button>
+        <button class="filter-btn" data-category="vivo" aria-label="Filtrer par VIVO">📱 VIVO</button>
+        <button class="filter-btn" data-category="oneplus" aria-label="Filtrer par OnePlus">📱 OnePlus</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="product-section">
+      
+      <!-- iPhone -->
+      <div class="product-column">
+        <h3>🍎 iPhone</h3>
+        <div class="product-card" data-category="iphone" data-price="890">
+          <img src="image/download (10).jpeg" alt="iPhone 15 Pro - Smartphone Apple haut de gamme" loading="lazy">
+          <h4>iPhone 15 Pro</h4>
+          <p class="price">$890</p>
+          <button class="buy-btn" onclick="addToCart('iPhone 15 Pro', 890, 'image/download (10).jpeg')" aria-label="Ajouter iPhone 15 Pro au panier">
+            <span><i class="fas fa-shopping-cart" aria-hidden="true"></i> Ajouter</span>
+          </button>
+        </div>
+        
+        <div class="product-card" data-category="iphone" data-price="700">
+          <img src="image/iPhone 15 celular Apple.jpeg" alt="iPhone 15 - Smartphone Apple" loading="lazy">
+          <h4>iPhone 15</h4>
+          <p class="price">$700</p>
+          <button class="buy-btn" onclick="addToCart('iPhone 15', 700, 'image/iPhone 15 celular Apple.jpeg')" aria-label="Ajouter iPhone 15 au panier">
+            <span><i class="fas fa-shopping-cart" aria-hidden="true"></i> Ajouter</span>
+          </button>
+        </div>
+        
+        <div class="product-card" data-category="iphone" data-price="500">
+          <img src="image/iPhone 14 128GB Roxo_LACRAD0 - 1 ano de garantia Apple.jpeg" alt="iPhone 14 - Smartphone Apple" loading="lazy">
+          <h4>iPhone 14</h4>
+          <p class="price">$500</p>
+          <button class="buy-btn" onclick="addToCart('iPhone 14', 500, 'image/iPhone 14 128GB Roxo_LACRAD0 - 1 ano de garantia Apple.jpeg')" aria-label="Ajouter iPhone 14 au panier">
+            <span><i class="fas fa-shopping-cart" aria-hidden="true"></i> Ajouter</span>
+          </button>
+        </div>
+        
+        <div class="product-card" data-category="iphone" data-price="1000">
+          <img src="image/iPhone 16 Pro 256 GB Titanio Blanco Desbloqueado.jpeg" alt="iPhone 16 Pro - Dernière génération Apple" loading="lazy">
+          <h4>iPhone 16 Pro</h4>
+          <p class="price">$1,000</p>
+          <button class="buy-btn" onclick="addToCart('iPhone 16 Pro', 1000, 'image/iPhone 16 Pro 256 GB Titanio Blanco Desbloqueado.jpeg')" aria-label="Ajouter iPhone 16 Pro au panier">
+            <span><i class="fas fa-shopping-cart" aria-hidden="true"></i> Ajouter</span>
+          </button>
+        </div>
+        
+        <div class="product-card" data-category="iphone" data-price="900">
+          <img src="image/Iphone 16 Series.jpeg" alt="iPhone 16 - Nouvelle génération" loading="lazy">
+          <h4>iPhone 16</h4>
+          <p class="price">$900</p>
+          <button class="buy-btn" onclick="addToCart('iPhone 16', 900, 'image/Iphone 16 Series.jpeg')" aria-label="Ajouter iPhone 16 au panier">
+            <span><i class="fas fa-shopping-cart" aria-hidden="true"></i> Ajouter</span>
+          </button>
+        </div>
+        
+        <div class="product-card" data-category="iphone" data-price="1500">
+          <img src="image/iPhone 16 Pro 256 GB Titanio Blanco Desbloqueado.jpeg" alt="iPhone 16 Pro Max - Ultra premium" loading="lazy">
+          <h4>iPhone 16 Pro Max</h4>
+          <p class="price">$1,500</p>
+          <button class="buy-btn" onclick="addToCart('iPhone 16 Pro Max', 1500, 'image/iPhone 16 Pro 256 GB Titanio Blanco Desbloqueado.jpeg')" aria-label="Ajouter iPhone 16 Pro Max au panier">
+            <span><i class="fas fa-shopping-cart" aria-hidden="true"></i> Ajouter</span>
+          </button>
+        </div>
+        
+        <div class="product-card" data-category="iphone" data-price="600">
+          <img src="image/iphone 13 pro (500$).jpeg" alt="iPhone 13 Pro - Performance premium" loading="lazy">
+          <h4>iPhone 13 Pro</h4>
+          <p class="price">$600</p>
+          <button class="buy-btn" onclick="addToCart('iPhone 13 Pro', 600, 'image/iphone 13 pro (500$).jpeg')" aria-label="Ajouter iPhone 13 Pro au panier">
+            <span><i class="fas fa-shopping-cart" aria-hidden="true"></i> Ajouter</span>
+          </button>
+        </div>
+        
+        <div class="product-card" data-category="iphone" data-price="640">
+          <img src="image/download (7).jpeg" alt="iPhone 12 Pro Max - Grand écran" loading="lazy">
+          <h4>iPhone 12 Pro Max</h4>
+          <p class="price">$640</p>
+          <button class="buy-btn" onclick="addToCart('iPhone 12 Pro Max', 640, 'image/download (7).jpeg')" aria-label="Ajouter iPhone 12 Pro Max au panier">
+            <span><i class="fas fa-shopping-cart" aria-hidden="true"></i> Ajouter</span>
+          </button>
+        </div>
+        
+      </div>
+
+      <!-- Samsung -->
+      <div class="product-column">
+        <h3>📱 Samsung</h3>
+        <div class="product-card" data-category="samsung" data-price="1200">
+          <img src="c:\Users\Xxama2.0\Desktop\Finalyluxama.github.io\image\Galaxy S25 Ultra получит более яркий экран по сравнению с другими моделями.jpeg" alt="Samsung Galaxy S25 Edge - Innovation Samsung" loading="lazy">
+          <h4>Samsung Galaxy S25 Edge</h4>
+          <p class="price">$1,200</p>
+          <button class="buy-btn" onclick="addToCart('Samsung Galaxy S25 Edge', 1200, 'image/Samsung Galaxy S25 Edge, with its launch just a few weeks away, has obtained FCC certification__🖥️QHD+ 120hz Dynamic Amoled Display _💪SD 8 Elite for Galaxy _💾12GB RAM _ 256_512GB Storage _📸200MP Main Camera.jpeg')" aria-label="Ajouter Samsung Galaxy S25 Edge au panier">
+            <span><i class="fas fa-shopping-cart" aria-hidden="true"></i> Ajouter</span>
+          </button>
+        </div>
+        
+        <div class="product-card" data-category="samsung" data-price="1100">
+          <img src="image/Samsung S25 Ultra.jpeg" alt="Samsung S25 Ultra - Ultra premium" loading="lazy">
+          <h4>Samsung S25 Ultra</h4>
+          <p class="price">$1,100</p>
+          <button class="buy-btn" onclick="addToCart('Samsung S25 Ultra', 1100, 'image/Samsung S25 Ultra.jpeg')" aria-label="Ajouter Samsung S25 Ultra au panier">
+            <span><i class="fas fa-shopping-cart" aria-hidden="true"></i> Ajouter</span>
+          </button>
+        </div>
+        
+        <div class="product-card" data-category="samsung" data-price="800">
+          <img src="image/download (8).jpeg" alt="Samsung Galaxy - Gamme populaire" loading="lazy">
+          <h4>Samsung Galaxy</h4>
+          <p class="price">$800</p>
+          <button class="buy-btn" onclick="addToCart('Samsung Galaxy', 800, 'image/download (8).jpeg')" aria-label="Ajouter Samsung Galaxy au panier">
+            <span><i class="fas fa-shopping-cart" aria-hidden="true"></i> Ajouter</span>
+          </button>
+        </div>
+        
+        <div class="product-card" data-category="samsung" data-price="600">
+          <img src="image/download (3).jpeg" alt="Samsung Galaxy A - Gamme accessible" loading="lazy">
+          <h4>Samsung Galaxy A</h4>
+          <p class="price">$600</p>
+          <button class="buy-btn" onclick="addToCart('Samsung Galaxy A', 600, 'image/download (3).jpeg')" aria-label="Ajouter Samsung Galaxy A au panier">
+            <span><i class="fas fa-shopping-cart" aria-hidden="true"></i> Ajouter</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Autres marques -->
+      <div class="product-column">
+        <h3>📲 Autres Marques</h3>
+        <div class="product-card" data-category="xiaomi" data-price="400">
+          <img src="image/Xiaomi Note 14 258GB _ 8GB de RAM, Verde, Camera 108 Mpx, Bluetooth 5_3, 5G, Dual SIM, Versão de Lançamento 2025.jpeg" alt="Xiaomi Note 14 - Performance accessible" loading="lazy">
+          <h4>Xiaomi Note 14</h4>
+          <p class="price">$400</p>
+          <button class="buy-btn" onclick="addToCart('Xiaomi Note 14', 400, 'image/Xiaomi Note 14 258GB _ 8GB de RAM, Verde, Camera 108 Mpx, Bluetooth 5_3, 5G, Dual SIM, Versão de Lançamento 2025.jpeg')" aria-label="Ajouter Xiaomi Note 14 au panier">
+            <span><i class="fas fa-shopping-cart" aria-hidden="true"></i> Ajouter</span>
+          </button>
+        </div>
+        
+        <div class="product-card" data-category="sony" data-price="900">
+          <img src="image/Sony Xperia 1 VI.jpeg" alt="Sony Xperia 1 VI - Smartphone professionnel" loading="lazy">
+          <h4>Sony Xperia 1 VI</h4>
+          <p class="price">$900</p>
+          <button class="buy-btn" onclick="addToCart('Sony Xperia 1 VI', 900, 'image/Sony Xperia 1 VI.jpeg')" aria-label="Ajouter Sony Xperia 1 VI au panier">
+            <span><i class="fas fa-shopping-cart" aria-hidden="true"></i> Ajouter</span>
+          </button>
+        </div>
+        
+        <div class="product-card" data-category="vivo" data-price="300">
+          <img src="image/VIVO T3x New.jpeg" alt="VIVO T3x - Nouveau smartphone" loading="lazy">
+          <h4>VIVO T3x</h4>
+          <p class="price">$300</p>
+          <button class="buy-btn" onclick="addToCart('VIVO T3x', 300, 'image/VIVO T3x New.jpeg')" aria-label="Ajouter VIVO T3x au panier">
+            <span><i class="fas fa-shopping-cart" aria-hidden="true"></i> Ajouter</span>
+          </button>
+        </div>
+        
+        <div class="product-card" data-category="oneplus" data-price="700">
+          <img src="image/download (6).jpeg" alt="OnePlus - Performance pure" loading="lazy">
+          <h4>OnePlus</h4>
+          <p class="price">$700</p>
+          <button class="buy-btn" onclick="addToCart('OnePlus', 700, 'image/download (6).jpeg')" aria-label="Ajouter OnePlus au panier">
+            <span><i class="fas fa-shopping-cart" aria-hidden="true"></i> Ajouter</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Contact</h3>
+        <p><i class="fas fa-envelope" aria-hidden="true"></i> Email: <a href="mailto:contact@xxlfourniture.com">contact@xxlfourniture.com</a></p>
+        <p><i class="fas fa-phone" aria-hidden="true"></i> Téléphone: <a href="tel:+50946264966">+509 4626 4966</a></p>
+        <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Adresse: Port-au-Prince, Haïti</p>
+      </div>
+      <div class="footer-section">
+        <h3>Réseaux sociaux</h3>
+        <div class="social-links">
+          <a href="#" aria-label="Suivez-nous sur Facebook"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Suivez-nous sur Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Suivez-nous sur Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h3>Modes de paiement</h3>
+        <div class="payment-methods">
+          <i class="fab fa-cc-mastercard" aria-label="Mastercard" title="Mastercard"></i>
+          <i class="fab fa-cc-visa" aria-label="Visa" title="Visa"></i>
+          <i class="fas fa-money-bill-wave" aria-label="Espèces" title="Espèces"></i>
+          <i class="fas fa-mobile-alt" aria-label="Mobile Money" title="Mobile Money"></i>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="copyright">&copy; 2025 XXL Fourniture. Tous droits réservés. | <a href="#privacy">Confidentialité</a> | <a href="#terms">Conditions d'utilisation</a></p>
+    </div>
+  </footer>
+
+  <script>
+    // Fonction améliorée pour ajouter au panier
+    function addToCart(name, price, image) {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      
+      // Vérifier si le produit existe déjà dans le panier
+      const existingProduct = cart.find(item => item.name === name);
+      
+      if (existingProduct) {
+        existingProduct.quantity = (existingProduct.quantity || 1) + 1;
+        showNotification(`${name} - Quantité mise à jour dans le panier !`, 'info');
+      } else {
+        cart.push({ 
+          name, 
+          price, 
+          image,
+          quantity: 1,
+          addedAt: new Date().toISOString()
+        });
+        showNotification(`${name} ajouté au panier !`, 'success');
+      }
+      
+      localStorage.setItem('cart', JSON.stringify(cart));
+      updateCartCount();
+      
+      // Animation du bouton
+      const button = event.target.closest('.buy-btn');
+      if (button) {
+        button.innerHTML = '<span><i class="fas fa-check" aria-hidden="true"></i> Ajouté !</span>';
+        button.style.background = 'linear-gradient(135deg, #28a745 0%, #20c997 100%)';
+        
+        setTimeout(() => {
+          button.innerHTML = '<span><i class="fas fa-shopping-cart" aria-hidden="true"></i> Ajouter</span>';
+          button.style.background = 'linear-gradient(135deg, #2e1457 0%, #45297a 100%)';
+        }, 2000);
+      }
+    }
+
+    // Mise à jour du compteur du panier
+    function updateCartCount() {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const totalItems = cart.reduce((total, item) => total + (item.quantity || 1), 0);
+      document.getElementById('cart-count').textContent = totalItems;
+    }
+
+    // Fonction de notification améliorée
+    function showNotification(message, type = 'info') {
+      const notification = document.createElement('div');
+      notification.className = `notification notification-${type}`;
+      notification.textContent = message;
+      
+      const colors = {
+        success: 'linear-gradient(135deg, #28a745 0%, #20c997 100%)',
+        error: 'linear-gradient(135deg, #dc3545 0%, #c82333 100%)',
+        info: 'linear-gradient(135deg, #17a2b8 0%, #138496 100%)'
+      };
+      
+      notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: ${colors[type]};
+        color: white;
+        padding: 15px 25px;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        z-index: 1000;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        font-weight: 600;
+        max-width: 300px;
+      `;
+      
+      document.body.appendChild(notification);
+      
+      // Animation d'entrée
+      setTimeout(() => {
+        notification.style.transform = 'translateX(0)';
+      }, 100);
+      
+      // Suppression automatique
+      setTimeout(() => {
+        notification.style.transform = 'translateX(100%)';
+        setTimeout(() => {
+          if (document.body.contains(notification)) {
+            document.body.removeChild(notification);
+          }
+        }, 300);
+      }, 4000);
+    }
+
+    // Filtrage des produits par catégorie
+    function filterProducts(category) {
+      const products = document.querySelectorAll('.product-card');
+      
+      products.forEach(product => {
+        if (category === 'all' || product.dataset.category === category) {
+          product.style.display = 'block';
+          product.style.animation = 'fadeIn 0.5s ease';
+        } else {
+          product.style.display = 'none';
+        }
+      });
+    }
+
+    // Recherche de produits
+    function searchProducts(query) {
+      const products = document.querySelectorAll('.product-card');
+      const searchTerm = query.toLowerCase();
+      
+      products.forEach(product => {
+        const name = product.querySelector('h4').textContent.toLowerCase();
+        const category = product.dataset.category;
+        
+        if (name.includes(searchTerm) || category.includes(searchTerm)) {
+          product.style.display = 'block';
+        } else {
+          product.style.display = 'none';
+        }
+      });
+    }
+
+    // Amélioration de l'accessibilité
+    document.addEventListener('keydown', function(e) {
+      // Navigation au clavier
+      if (e.key === 'Tab') {
+        // Gestion de la navigation par tab
+        const focusableElements = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
+        const firstFocusableElement = document.querySelector(focusableElements);
+        const focusableContent = document.querySelectorAll(focusableElements);
+        const lastFocusableElement = focusableContent[focusableContent.length - 1];
+        
+        if (e.shiftKey) {
+          if (document.activeElement === firstFocusableElement) {
+            lastFocusableElement.focus();
+            e.preventDefault();
+          }
+        } else {
+          if (document.activeElement === lastFocusableElement) {
+            firstFocusableElement.focus();
+            e.preventDefault();
+          }
+        }
+      }
+    });
+
+    // Lazy loading pour les images
+    if ('IntersectionObserver' in window) {
+      const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const img = entry.target;
+            img.src = img.dataset.src || img.src;
+            img.classList.remove('lazy');
+            imageObserver.unobserve(img);
+          }
+        });
+      });
+
+      document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+        imageObserver.observe(img);
+      });
+    }
+
+    // Initialisation au chargement de la page
+    window.addEventListener('load', function() {
+      updateCartCount();
+      
+      // Animation d'entrée des produits
+      const products = document.querySelectorAll('.product-card');
+      products.forEach((product, index) => {
+        setTimeout(() => {
+          product.style.opacity = '0';
+          product.style.transform = 'translateY(20px)';
+          product.style.transition = 'all 0.5s ease';
+          
+          setTimeout(() => {
+            product.style.opacity = '1';
+            product.style.transform = 'translateY(0)';
+          }, 100);
+        }, index * 100);
+      });
+    });
+
+    // Gestion des erreurs réseau
+    window.addEventListener('online', function() {
+      showNotification('Connexion internet rétablie', 'success');
+    });
+
+    window.addEventListener('offline', function() {
+      showNotification('Connexion internet perdue', 'error');
+    });
+  </script>
+</body>
+</html>
