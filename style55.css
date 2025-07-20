@@ -127,11 +127,12 @@ nav a:hover {
     }
 
     .product-section {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      padding: 40px;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      padding: 2rem;
+      max-width: 1600px;
+      margin: 0 auto;
     }
 
     .product-column {

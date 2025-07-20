@@ -30,7 +30,7 @@
     header {
       background: linear-gradient(135deg, #2e1457 0%, #45297a 100%);
       color: white;
-      padding: 1.5rem;
+      padding: 0.3rem;
       text-align: center;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
       position: sticky;
@@ -39,8 +39,8 @@
     }
 
     header h1 {
-      margin: 0 0 1rem 0;
-      font-size: 2.5rem;
+      margin: 0 0 0.2rem 0;
+      font-size: 1.2rem;
       font-weight: 700;
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     }
@@ -49,19 +49,20 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 2rem;
+      gap: 0.3rem;
       flex-wrap: wrap;
     }
 
     nav a {
       color: white;
       text-decoration: none;
-      padding: 0.5rem 1rem;
-      border-radius: 25px;
+      padding: 0.15rem 0.4rem;
+      border-radius: 12px;
       transition: all 0.3s ease;
       font-weight: 500;
       position: relative;
       overflow: hidden;
+      font-size: 0.7rem;
     }
 
     nav a::before {
@@ -85,13 +86,18 @@
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     }
 
+    main {
+      margin-top: 1rem;
+    }
+
     .product-section {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
       padding: 2rem;
-      max-width: 1400px;
+      max-width: 1600px;
       margin: 0 auto;
+      padding-top: 0.5rem;
     }
 
     .product-column {
@@ -236,15 +242,15 @@
     footer {
       background: linear-gradient(135deg, #2e1457 0%, #45297a 100%);
       color: white;
-      padding: 3rem 2rem 1rem;
-      margin-top: 3rem;
+      padding: 1rem 1.5rem 0.3rem;
+      margin-top: 1rem;
     }
 
     .footer-content {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      margin-bottom: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 0.8rem;
+      margin-bottom: 0.8rem;
       max-width: 1200px;
       margin-left: auto;
       margin-right: auto;
@@ -255,9 +261,9 @@
     }
 
     .footer-section h3 {
-      margin-bottom: 1rem;
+      margin-bottom: 0.4rem;
       color: #fff;
-      font-size: 1.3rem;
+      font-size: 0.9rem;
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 1px;
@@ -265,45 +271,59 @@
 
     .footer-section a {
       color: white;
-      margin: 0 0.5rem;
-      font-size: 1.5rem;
+      margin: 0 0.2rem;
+      font-size: 1rem;
       transition: all 0.3s ease;
       display: inline-block;
     }
 
     .footer-section a:hover {
       color: #e74c3c;
-      transform: translateY(-3px);
+      transform: translateY(-2px);
     }
 
     .payment-methods {
       display: flex;
       justify-content: center;
-      gap: 1rem;
+      gap: 0.5rem;
       flex-wrap: wrap;
     }
 
     .payment-methods i {
-      margin: 0 0.5rem;
-      font-size: 1.5rem;
+      margin: 0 0.2rem;
+      font-size: 1rem;
       transition: all 0.3s ease;
     }
 
     .payment-methods i:hover {
-      transform: scale(1.2);
+      transform: scale(1.1);
       color: #e74c3c;
     }
 
     .copyright {
       text-align: center;
-      margin-top: 2rem;
-      font-size: 0.9rem;
+      margin-top: 0.8rem;
+      font-size: 0.7rem;
       color: #bdc3c7;
       border-top: 1px solid rgba(255, 255, 255, 0.1);
-      padding-top: 1rem;
+      padding-top: 0.4rem;
     }
 
     /* Responsive design */
+    @media (max-width: 1200px) {
+      .product-section {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+      }
+    }
+    
+    @media (max-width: 900px) {
+      .product-section {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+      }
+    }
+    
     @media (max-width: 768px) {
       .product-section {
         grid-template-columns: 1fr;
@@ -316,11 +336,32 @@
       
       nav {
         flex-direction: column;
-        gap: 1rem;
+        gap: 0.2rem;
+      }
+      
+      nav a {
+        padding: 0.1rem 0.3rem;
+        font-size: 0.6rem;
       }
       
       header h1 {
-        font-size: 2rem;
+        font-size: 1rem;
+        margin: 0 0 0.1rem 0;
+      }
+
+      .search-input {
+        font-size: 0.6rem;
+        padding: 3px 30px 3px 8px;
+      }
+
+      .search-btn {
+        width: 20px;
+        height: 20px;
+      }
+
+      .filter-btn {
+        font-size: 0.5rem;
+        padding: 2px 4px;
       }
     }
 
@@ -374,7 +415,7 @@
 
     /* Barre de recherche */
     .search-container {
-      margin-top: 1.5rem;
+      margin-top: 0.3rem;
       text-align: center;
     }
 
@@ -382,19 +423,19 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      max-width: 500px;
-      margin: 0 auto 1rem;
+      max-width: 350px;
+      margin: 0 auto 0.2rem;
       position: relative;
     }
 
     .search-input {
       width: 100%;
-      padding: 12px 50px 12px 20px;
+      padding: 4px 35px 4px 10px;
       border: 2px solid rgba(255, 255, 255, 0.3);
-      border-radius: 25px;
+      border-radius: 12px;
       background: rgba(255, 255, 255, 0.1);
       color: white;
-      font-size: 1rem;
+      font-size: 0.7rem;
       backdrop-filter: blur(10px);
       transition: all 0.3s ease;
     }
@@ -412,14 +453,14 @@
 
     .search-btn {
       position: absolute;
-      right: 5px;
+      right: 2px;
       top: 50%;
       transform: translateY(-50%);
       background: linear-gradient(135deg, #2e1457 0%, #45297a 100%);
       border: none;
       border-radius: 50%;
-      width: 40px;
-      height: 40px;
+      width: 24px;
+      height: 24px;
       color: white;
       cursor: pointer;
       transition: all 0.3s ease;
@@ -437,7 +478,7 @@
     .search-filters {
       display: flex;
       justify-content: center;
-      gap: 0.5rem;
+      gap: 0.15rem;
       flex-wrap: wrap;
     }
 
@@ -445,11 +486,11 @@
       background: rgba(255, 255, 255, 0.1);
       border: 2px solid rgba(255, 255, 255, 0.3);
       color: white;
-      padding: 8px 16px;
-      border-radius: 20px;
+      padding: 3px 6px;
+      border-radius: 10px;
       cursor: pointer;
       transition: all 0.3s ease;
-      font-size: 0.9rem;
+      font-size: 0.6rem;
       font-weight: 500;
       backdrop-filter: blur(10px);
     }
@@ -501,6 +542,7 @@
         <button class="filter-btn" data-category="chaise" aria-label="Filtrer par chaises">🪑 Chaises</button>
         <button class="filter-btn" data-category="souris" aria-label="Filtrer par souris">🖱️ Souris</button>
         <button class="filter-btn" data-category="casque" aria-label="Filtrer par casques">🎧 Casques</button>
+        <button class="filter-btn" data-category="accessoire" aria-label="Filtrer par accessoires">🎮 Accessoires</button>
       </div>
     </div>
   </header>
@@ -512,28 +554,28 @@
       <div class="product-column">
         <h3>⌨️ Claviers Gaming</h3>
         <div class="product-card" data-category="clavier" data-price="200">
-          <img src="image/download (1).jpg" alt="Clavier gaming mécanique avec rétroéclairage RGB" loading="lazy">
-          <h4>Clavier Gaming RGB</h4>
+          <img src="image/Rk68 Keyboard.jpg" alt="Clavier mécanique RK68 compact" loading="lazy">
+          <h4>Clavier RK68 Mécanique</h4>
           <p class="price">$200</p>
-          <button class="buy-btn" onclick="addToCart('Clavier Gaming RGB', 200, 'image/download (1).jpg')" aria-label="Ajouter Clavier Gaming RGB au panier">
+          <button class="buy-btn" onclick="addToCart('Clavier RK68 Mécanique', 200, 'image/Rk68 Keyboard.jpg')" aria-label="Ajouter Clavier RK68 Mécanique au panier">
             <span><i class="fas fa-shopping-cart" aria-hidden="true"></i> Ajouter</span>
           </button>
         </div>
         
         <div class="product-card" data-category="clavier" data-price="300">
-          <img src="image/download (2).jpg" alt="Clavier mécanique haute performance" loading="lazy">
-          <h4>Clavier Mécanique Pro</h4>
+          <img src="image/Teclado Sem Fio Gamer Steelseries Apex Pro Mini RGB - Preto (Ingles).jpg" alt="Steelseries Apex Pro Mini clavier gaming sans fil" loading="lazy">
+          <h4>Steelseries Apex Pro Mini</h4>
           <p class="price">$300</p>
-          <button class="buy-btn" onclick="addToCart('Clavier Mécanique Pro', 300, 'image/download (2).jpg')" aria-label="Ajouter Clavier Mécanique Pro au panier">
+          <button class="buy-btn" onclick="addToCart('Steelseries Apex Pro Mini', 300, 'image/Teclado Sem Fio Gamer Steelseries Apex Pro Mini RGB - Preto (Ingles).jpg')" aria-label="Ajouter Steelseries Apex Pro Mini au panier">
             <span><i class="fas fa-shopping-cart" aria-hidden="true"></i> Ajouter</span>
           </button>
         </div>
         
         <div class="product-card" data-category="clavier" data-price="200">
-          <img src="image/download.jpg" alt="Clavier compact sans fil" loading="lazy">
-          <h4>Clavier Compact Sans Fil</h4>
+          <img src="image/Logitech K400.jpg" alt="Logitech K400 clavier sans fil avec pavé tactile" loading="lazy">
+          <h4>Logitech K400 Sans Fil</h4>
           <p class="price">$200</p>
-          <button class="buy-btn" onclick="addToCart('Clavier Compact Sans Fil', 200, 'image/download.jpg')" aria-label="Ajouter Clavier Compact Sans Fil au panier">
+          <button class="buy-btn" onclick="addToCart('Logitech K400 Sans Fil', 200, 'image/Logitech K400.jpg')" aria-label="Ajouter Logitech K400 Sans Fil au panier">
             <span><i class="fas fa-shopping-cart" aria-hidden="true"></i> Ajouter</span>
           </button>
         </div>
@@ -557,7 +599,7 @@
         </div>
         
         <div class="product-card" data-category="clavier" data-price="100">
-          <img src="image/Logitech K400 Plus Clavier Sans Fil Touch TV Avec Contrôle Média et Pavé Tactile, Clavier Francais AZERTY - Noir.jpg" alt="Logitech K400 Plus clavier sans fil avec pavé tactile" loading="lazy">
+          <img src="image/Logitech K400.jpg" alt="Logitech K400 Plus clavier sans fil avec pavé tactile" loading="lazy">
           <h4>Logitech K400 Plus</h4>
           <p class="price">$100</p>
           <button class="buy-btn" onclick="addToCart('Logitech K400 Plus', 100, 'image/Logitech K400 Plus Clavier Sans Fil Touch TV Avec Contrôle Média et Pavé Tactile, Clavier Francais AZERTY - Noir.jpg')" aria-label="Ajouter Logitech K400 Plus au panier">
@@ -606,10 +648,19 @@
         </div>
         
         <div class="product-card" data-category="chaise" data-price="400">
-          <img src="image/Holiday Gaming Wonderland_ Christmas 2024.jpg" alt="Chaise gaming édition spéciale" loading="lazy">
+          <img src="image/Bright clean Gaming Chair.jpg" alt="Chaise gaming édition spéciale" loading="lazy">
           <h4>Chaise Gaming Édition Spéciale</h4>
           <p class="price">$400</p>
           <button class="buy-btn" onclick="addToCart('Chaise Gaming Édition Spéciale', 400, 'image/Holiday Gaming Wonderland_ Christmas 2024.jpg')" aria-label="Ajouter Chaise Gaming Édition Spéciale au panier">
+            <span><i class="fas fa-shopping-cart" aria-hidden="true"></i> Ajouter</span>
+          </button>
+        </div>
+        
+        <div class="product-card" data-category="chaise" data-price="350">
+          <img src="image/Compact & Agile_ Space-Saving Gaming Chair for Small Setups!.jpeg" alt="Chaise gaming compacte pour petits espaces" loading="lazy">
+          <h4>Chaise Gaming Compacte</h4>
+          <p class="price">$350</p>
+          <button class="buy-btn" onclick="addToCart('Chaise Gaming Compacte', 350, 'image/Compact & Agile_ Space-Saving Gaming Chair for Small Setups!.jpeg')" aria-label="Ajouter Chaise Gaming Compacte au panier">
             <span><i class="fas fa-shopping-cart" aria-hidden="true"></i> Ajouter</span>
           </button>
         </div>
@@ -619,25 +670,25 @@
       <div class="product-column">
         <h3>🖱️ Souris Gaming</h3>
         <div class="product-card" data-category="souris" data-price="500">
-          <img src="image/tests et avis sur la High Tech - crazy-geek_fr.jpg" alt="Souris gaming haute performance" loading="lazy">
-          <h4>Souris Gaming Pro</h4>
+          <img src="image/razor viper ultimate ✦ °_ •.jpg" alt="Razer Viper Ultimate souris gaming sans fil" loading="lazy">
+          <h4>Razer Viper Ultimate</h4>
           <p class="price">$500</p>
-          <button class="buy-btn" onclick="addToCart('Souris Gaming Pro', 500, 'image/tests et avis sur la High Tech - crazy-geek_fr.jpg')" aria-label="Ajouter Souris Gaming Pro au panier">
+          <button class="buy-btn" onclick="addToCart('Razer Viper Ultimate', 500, 'image/razor viper ultimate ✦ °_ •.jpg')" aria-label="Ajouter Razer Viper Ultimate au panier">
             <span><i class="fas fa-shopping-cart" aria-hidden="true"></i> Ajouter</span>
           </button>
         </div>
         
         <div class="product-card" data-category="souris" data-price="400">
-          <img src="image/Batman Mouse.jpg" alt="Souris gaming thème Batman" loading="lazy">
-          <h4>Souris Batman</h4>
+          <img src="image/mousses.jpg" alt="Collection de souris gaming" loading="lazy">
+          <h4>Collection Souris Gaming</h4>
           <p class="price">$400</p>
-          <button class="buy-btn" onclick="addToCart('Souris Batman', 400, 'image/Batman Mouse.jpg')" aria-label="Ajouter Souris Batman au panier">
+          <button class="buy-btn" onclick="addToCart('Collection Souris Gaming', 400, 'image/mousses.jpg')" aria-label="Ajouter Collection Souris Gaming au panier">
             <span><i class="fas fa-shopping-cart" aria-hidden="true"></i> Ajouter</span>
           </button>
         </div>
         
         <div class="product-card" data-category="souris" data-price="90">
-          <img src="image/Black Panther's Mouse.jpg" alt="Souris gaming thème Black Panther" loading="lazy">
+          <img src="image/OIP.webp" alt="Souris gaming thème Black Panther" loading="lazy">
           <h4>Souris Black Panther</h4>
           <p class="price">$90</p>
           <button class="buy-btn" onclick="addToCart('Souris Black Panther', 90, 'image/Black Panther\'s Mouse.jpg')" aria-label="Ajouter Souris Black Panther au panier">
@@ -646,7 +697,7 @@
         </div>
         
         <div class="product-card" data-category="souris" data-price="80">
-          <img src="image/_Elite Precision_ Ultra Custom Wireless Mouse_.jpg" alt="Souris sans fil Elite Precision" loading="lazy">
+          <img src="image/R (2).jpg" alt="Souris sans fil Elite Precision" loading="lazy">
           <h4>Elite Precision Wireless</h4>
           <p class="price">$80</p>
           <button class="buy-btn" onclick="addToCart('Elite Precision Wireless', 80, 'image/_Elite Precision_ Ultra Custom Wireless Mouse_.jpg')" aria-label="Ajouter Elite Precision Wireless au panier">
@@ -655,8 +706,16 @@
         </div>
         
         <div class="product-card" data-category="souris" data-price="50">
-          <img src="image/5 Best Silent Gaming Mouse In 2025_ Buyer's Guide Included.jpg" alt="Souris gaming silencieuse" loading="lazy">
+          <img src="image/Razer-Viper-Viper-V3-Pro-8K-Wireless-Faker-Edition-4-640x640.webp" alt="Souris gaming silencieuse" loading="lazy">
           <h4>Souris Gaming Silencieuse</h4>
+          <p class="price">$50</p>
+          <button class="buy-btn" onclick="addToCart('Souris Gaming Silencieuse', 50, 'image/5 Best Silent Gaming Mouse In 2025_ Buyer\'s Guide Included.jpg')" aria-label="Ajouter Souris Gaming Silencieuse au panier">
+            <span><i class="fas fa-shopping-cart" aria-hidden="true"></i> Ajouter</span>
+          </button>
+        </div>
+        <div class="product-card" data-category="souris" data-price="50">
+          <img src="image/OIP (1).webp" alt="Souris gaming silencieuse" loading="lazy">
+          <h4>Souris Gaming</h4>
           <p class="price">$50</p>
           <button class="buy-btn" onclick="addToCart('Souris Gaming Silencieuse', 50, 'image/5 Best Silent Gaming Mouse In 2025_ Buyer\'s Guide Included.jpg')" aria-label="Ajouter Souris Gaming Silencieuse au panier">
             <span><i class="fas fa-shopping-cart" aria-hidden="true"></i> Ajouter</span>
@@ -668,23 +727,13 @@
       <div class="product-column">
         <h3>🎧 Casques Audio</h3>
         <div class="product-card" data-category="casque" data-price="50">
-          <img src="image/download (3).jpg" alt="Casque audio gaming" loading="lazy">
-          <h4>Casque Gaming</h4>
+          <img src="image/headset.jpg" alt="Casque audio gaming professionnel" loading="lazy">
+          <h4>Casque Gaming Pro</h4>
           <p class="price">$50</p>
-          <button class="buy-btn" onclick="addToCart('Casque Gaming', 50, 'image/download (3).jpg')" aria-label="Ajouter Casque Gaming au panier">
+          <button class="buy-btn" onclick="addToCart('Casque Gaming Pro', 50, 'image/headset.jpg')" aria-label="Ajouter Casque Gaming Pro au panier">
             <span><i class="fas fa-shopping-cart" aria-hidden="true"></i> Ajouter</span>
           </button>
         </div>
-        
-        <div class="product-card" data-category="casque" data-price="40">
-          <img src="image/download (4).jpg" alt="Casque audio compact" loading="lazy">
-          <h4>Casque Compact</h4>
-          <p class="price">$40</p>
-          <button class="buy-btn" onclick="addToCart('Casque Compact', 40, 'image/download (4).jpg')" aria-label="Ajouter Casque Compact au panier">
-            <span><i class="fas fa-shopping-cart" aria-hidden="true"></i> Ajouter</span>
-          </button>
-        </div>
-        
         <div class="product-card" data-category="casque" data-price="60">
           <img src="image/Logitech G – 733 LIGHTSPEED – Casque de jeu sans fil avec bandeau de suspension, LIGHTSYNC RGB, Blue Voice Mic Techonolgy et PRO-G Audio, noir.jpg" alt="Logitech G733 LIGHTSPEED casque sans fil" loading="lazy">
           <h4>Logitech G733 LIGHTSPEED</h4>
@@ -713,15 +762,23 @@
         </div>
         
         <div class="product-card" data-category="casque" data-price="100">
-          <img src="image/Mine h.jpg" alt="Casque audio premium" loading="lazy">
+          <img src="image/casque1.jpg" alt="Casque audio premium" loading="lazy">
           <h4>Casque Premium</h4>
           <p class="price">$100</p>
           <button class="buy-btn" onclick="addToCart('Casque Premium', 100, 'image/Mine h.jpg')" aria-label="Ajouter Casque Premium au panier">
             <span><i class="fas fa-shopping-cart" aria-hidden="true"></i> Ajouter</span>
           </button>
         </div>
+        
+        <div class="product-card" data-category="casque" data-price="120">
+          <img src="image/JBL Tune 720BT, casque audio sans fil, léger et confortable, Bluetooth 5_3, autonomie jusqu'à 76 h, charge rapide, son JBL Pure Bass, noir.jpg" alt="JBL Tune 720BT casque sans fil" loading="lazy">
+          <h4>JBL Tune 720BT Pro</h4>
+          <p class="price">$120</p>
+          <button class="buy-btn" onclick="addToCart('JBL Tune 720BT Pro', 120, 'image/JBL Tune 720BT, casque audio sans fil, léger et confortable, Bluetooth 5_3, autonomie jusqu\'à 76 h, charge rapide, son JBL Pure Bass, noir.jpg')" aria-label="Ajouter JBL Tune 720BT Pro au panier">
+            <span><i class="fas fa-shopping-cart" aria-hidden="true"></i> Ajouter</span>
+          </button>
+        </div>
       </div>
-
     </div>
   </main>
 

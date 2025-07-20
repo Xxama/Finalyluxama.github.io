@@ -96,11 +96,12 @@
     }
 
     .product-section {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      padding: 40px;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      padding: 2rem;
+      max-width: 1600px;
+      margin: 0 auto;
     }
 
     .product-column {
@@ -225,31 +226,33 @@
 footer {
     background: #2e1457;
     color: white;
-    padding: 2rem;
+    padding: 1rem 1.5rem 0.3rem;
     text-align: center;
 }
 
 .footer-content {
     display: flex;
     justify-content: space-around;
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
     flex-wrap: wrap;
+    gap: 0.8rem;
 }
 
 .footer-section {
-    margin: 1rem;
-    min-width: 200px;
+    margin: 0.5rem;
+    min-width: 150px;
 }
 
 .footer-section h3 {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
     color: #e74c3c;
+    font-size: 0.9rem;
 }
 
 .footer-section a {
     color: white;
-    margin: 0 0.5rem;
-    font-size: 1.5rem;
+    margin: 0 0.2rem;
+    font-size: 1rem;
     transition: color 0.3s;
 }
 
@@ -258,17 +261,32 @@ footer {
 }
 
 .payment-methods i {
-    margin: 0 0.5rem;
-    font-size: 1.5rem;
+    margin: 0 0.2rem;
+    font-size: 1rem;
 }
 
 .copyright {
-    margin-top: 1rem;
-    font-size: 0.9rem;
+    margin-top: 0.8rem;
+    font-size: 0.7rem;
     color: #bdc3c7;
+    padding-top: 0.4rem;
 }
 
 /* Responsive design */
+@media (max-width: 1200px) {
+  .product-section {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .product-section {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+
 @media (max-width: 768px) {
   .search-bar {
     flex-direction: column;
@@ -283,7 +301,8 @@ footer {
   }
   
   .product-section {
-    padding: 20px;
+    grid-template-columns: 1fr;
+    padding: 1rem;
   }
 }
   </style>
@@ -402,10 +421,10 @@ footer {
         <a href="index57.html" class="buy-btn" onclick="addToCart('Dell Inspiron 16 Plus 7630', 900)">Acheter</a>
       </div>
        <div class="product-card">
-        <img src="image/Dell G15 5530 Gaming Laptop - 15_6-inch FHD💥.jpeg" alt="iPhone 15 Pro">
-        <h4>iDell G15 5530 Gaming Laptop 4TB COREI9 RAM 32GB</h4>
+        <img src="image/Dell G15 5530 Gaming Laptop - 15_6-inch FHD💥.jpeg" alt="Dell G15 5530 Gaming Laptop">
+        <h4>Dell G15 5530 Gaming Laptop 4TB COREI9 RAM 32GB</h4>
         <p class="price">3000 $</p>
-        <a href="index57.html" class="buy-btn" onclick="addToCart('iPhone 15 Pro', 890)">Acheter</a>
+        <a href="index57.html" class="buy-btn" onclick="addToCart('Dell G15 5530 Gaming Laptop', 3000)">Acheter</a>
       </div>
        <div class="product-card">
         <img src="image/Dell G15 -15_6 inch Full HD Gaming laptop.jpeg" alt="Dell G15 -15">
@@ -417,7 +436,7 @@ footer {
         <img src="image/Dell 14 Portable Monitor - P1424H _ Dell USA.jpeg" alt="Dell 14 Portable Monitor">
         <h4>Dell 14 Portable Monitor 512GB RAM16 CORE I7</h4>
         <p class="price">800 $</p>
-        <a href="index57.html" class="buy-btn" onclick="addToCart('Dell 14 Portable Monitor', 890)">Acheter</a>
+        <a href="index57.html" class="buy-btn" onclick="addToCart('Dell 14 Portable Monitor', 800)">Acheter</a>
       </div>
   
     </div>
@@ -556,7 +575,7 @@ footer {
         <img src="image/ASUS VivoBook Go 14 Flip Thin and Light 2-in-1 Laptop, 14” HD Touch Display, Intel Celeron, 4GB RAM, 128GB eMMC, Windows 11 Home in S Mode + Microsoft 365 Personal 1-Year, J1401KA-AS01-CA.jpeg" alt="ASUS VivoBook Go 14 Flip ">
         <h4>ASUS VivoBook Go 14 Flip </h4>
         <p class="price">800 $</p>
-        <a href="index57.html" class="buy-btn" onclick="addToCart('ASUS VivoBook Go 14 Flip ', 300)">Acheter</a>
+        <a href="index57.html" class="buy-btn" onclick="addToCart('ASUS VivoBook Go 14 Flip ', 800)">Acheter</a>
       </div>
       <div class="product-card">
         <img src="image/ASUS Vivobook Pro 14 OLED M3400QA-KM702WS ( AMD Ryzen 7 5800H _ 16GB ram _ 512GB SSD ) launched in India _ Tech Stories India _ Technology News Online.jpeg" alt="ASUS Vivobook Pro 14 OLED">

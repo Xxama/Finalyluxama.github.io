@@ -1,0 +1,29 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://xxlfourniture.com/sitemap.xml
+
+# Pages importantes
+Allow: /index55.html
+Allow: /phone.html
+Allow: /ordi.html
+Allow: /laptop.html
+Allow: /indexese.html
+Allow: /avis.html
+Allow: /pannier.html
+
+# Ressources
+Allow: /image/
+Allow: /css/
+Allow: /style.css
+Allow: /style55.css
+
+# Empêcher l'indexation des fichiers de développement
+Disallow: /.vscode/
+Disallow: /.git/
+Disallow: /.DS_Store
+Disallow: /script.js
+
+# Temps d'attente entre les requêtes (en secondes)
+Crawl-delay: 1 
